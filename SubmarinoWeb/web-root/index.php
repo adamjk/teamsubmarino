@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <title>placeholder: Insert title here</title>
 </head>
-<body>
+    <body>
+    <p>Fill me in</p>
+    <?php
 
-</body>
+	?>
+    </body>
 </html>
