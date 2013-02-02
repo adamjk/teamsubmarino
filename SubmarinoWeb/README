@@ -1,0 +1,4 @@
+This directory is the project directory for web application-site. HTML, js, css, php, web application controllers/API(REST), etc... This directory should be able to be built and have a fully functioning web application/site.
+
+Base directory of compilable/interpretable webapp code is src/main/webapp (old habits die hard)
+
