@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+require("../inc/all.php");
+?>
 <html>
 <head>
 <meta charset="UTF-8">
