@@ -245,6 +245,7 @@ function button_click_ligament() {
       canvas.selectAll("a.legend_link")
         .data(dataSet) // Instruct to bind dataSet to text elements
         .enter().append("svg:a") // Append legend elements
+        	.attr("xlink:href", function(d) { return "team.php?team_name=" + d.Team + "&team_id=" + d.TeamId; })
             .append("text")
               .attr("text-anchor", "center")
               .attr("x", 0)
