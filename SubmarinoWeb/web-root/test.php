@@ -57,6 +57,14 @@ require("../inc/all.php");
     print_r($results10);
     echo('<br/>');
     
+    
+    $results11 = $teamDao->getInjuryDataByPlayerAndType("660");
+    print_r($results11);
+    echo('<br/>');
+    $results11 = $teamDao->getInjuryDataByPlayerAndType("660","Muscle");
+    print_r($results11);
+    echo('<br/>');
+    
 	?>
     </body>
 </html>
