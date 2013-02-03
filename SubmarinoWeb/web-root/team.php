@@ -48,9 +48,9 @@ require("../inc/all.php");
           <a class="brand" href="#">Project Submarino</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li><a href="index.php">Home</a></li>
-              <li class="active"><a href="index.php">Leagues</a></li>
-              <li><a href="team.php">Teams</a></li>
+              <li class="active"><a href="index.php">Home</a></li>
+              <li><a href="index.php">Leagues</a></li>
+              <li class="active"><a href="team.php">Teams</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -83,13 +83,13 @@ require("../inc/all.php");
 
     // Data Used for this example…
     <?php  
-        $leagueDao = new LeagueDao(); 
-        $leagueGamesMissed = $leagueDao->getGamesMissedByTeam();
-        $avgLengthInjury = $leagueDao->getAvgLengthOfInjuryByTeam();
-        $reocccurenceData = $leagueDao->getInjuryReoccurencesByTeam();
+        $teamDao = new TeamDao(); 
+        $leagueGamesMissedByPlayer = $teamDao->getGamesMissedByPlayer("660");
+        $numInjuriesByGamesMissed = $teamDao->getNumInjuriesByGamesMissed("660");
+        $injuryDataByPlayer = $teamDao->getInjuryDataByPlayerAndType("660");
     ?>
     // main graph dataset
-    var dataSet1 = <?php echo($leagueGamesMissed); ?>;
+    //var dataSet1 = <?php echo($leagueGamesMissed); ?>;
     
     /*var dataSet1 = [
       {Team: "Arsenal", GamesLost: 54},
@@ -395,7 +395,7 @@ require("../inc/all.php");
 		
     <script src="http://d3js.org/d3.v2.min.js"></script>
 	      <script type="text/javascript">
-        drawHorizontalBarChart("Bars1", dataSet1, ".chart", 600, 1400);
+        // drawHorizontalBarChart("Bars1", dataSet1, ".chart", 600, 1400);
       </script>
 	  </div>
 	  <div class="columnB pull-right">
@@ -406,22 +406,23 @@ require("../inc/all.php");
       <!-- Example row of columns -->
       <div class="row">
         <div class="span6">
-          <h2>Injury Recovery Time</h2>
-          <p>Better sports science can get players back on field quickly but run the risk of recurrence.</p>
+          <h2>Games Missed by Player</h2>
+          <p>Profile of games missed by player highlights individual issues.</p>
           <div class="chart2"></div>
 		  <script type="text/javascript">
-		  var recoveryTimeSet = <?php echo($avgLengthInjury); ?>;
+		 
+		  var leagueGamesMissed = <?php echo($leagueGamesMissedByPlayer); ?>;
 		   
-          drawHorizontalBarChart("Bars2", recoveryTimeSet, ".chart2", 200, 600);
+          drawHorizontalBarChart("Bars2", leagueGamesMissed, ".chart2", 150, 600);
       </script>
         </div>
         <div class="span6">
-          <h2>Injury Recurrences</h2>
-          <p>Recurrance can be a symptom of not addressing root cause of injuries.</p>
+          <h2>Player Injuries Length Histogram</h2>
+          <p>This histogram details whether you have chronic minor issues or long term serious conditions.</p>
           <div class="chart3"></div>
 		  <script type="text/javascript">
-		  var reoccurenceSet = <?php echo($reocccurenceData); ?>;
-        drawHorizontalBarChart("Bars3", reoccurenceSet, ".chart3", 200, 600);
+		  var numInjuriesByGames = <?php echo($numInjuriesByGamesMissed); ?>;
+        drawHorizontalBarChart("Bars3", numInjuriesByGames, ".chart3", 125, 600);
       </script>
        </div>
       </div>

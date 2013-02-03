@@ -24,6 +24,31 @@ function csvString($results) {
     return $csvString;
 }
 
+function jsonString($results, $headers) {
+    $jsonString = '[ ';
+    
+    foreach ($results as $line) {
+        //print_r($line);
+        //print_r($headers);
+        $jsonString .= '{ ';
+        for ($i = 0; $i < count($line); $i++) {
+            
+            $jsonString .= $headers[$i] . ': "' . $line[$i] . '"';
+            if ($i != count($line) - 1) {
+                $jsonString .= ', ';
+            }
+        }
+        
+        $jsonString .= '}, ';
+        
+    }
+    unset($line);
+    $jsonString .= ' ]';
+    
+    return $jsonString;
+    
+}
+
 // TODO since we only have one season and one league of data, all access
 // functions are missing id parameters for these. add later for support
 static $SEASON_START_YEAR = 2012;
@@ -76,7 +101,9 @@ class TeamDao {
             $stmt->bind_result($teamId, $playerName, $playerId, $numGames);
             
             // add header entry
-            $queryResults[] = array("PLAYER_NAME", "PLAYER_ID", "GAMES_MISSED");
+            //$queryResults[] = array("PLAYER_NAME", "PLAYER_ID", "GAMES_MISSED");
+            $headers = array("Team", "TeamId", "GamesLost");
+            
             /* fetch value */
             $total_count = 0;
             while ($stmt->fetch()) {
@@ -87,7 +114,7 @@ class TeamDao {
             $stmt->close();
         }
 
-        return csvString($queryResults);
+        return jsonString($queryResults, $headers);
     }
 
     public function getNumInjuriesByGamesMissed($teamId, $injuryCat = null) {
@@ -132,7 +159,9 @@ class TeamDao {
             $stmt->bind_result($numGamesMissed, $injuryCount);
         
             // add header entry
-            $queryResults[] = array("GAMES_MISSED", "INJURY_COUNT");
+            //$queryResults[] = array("GAMES_MISSED", "INJURY_COUNT");
+            $headers = array("Team", "GamesLost");
+            
             /* fetch value */
             $total_count = 0;
             while ($stmt->fetch()) {
@@ -143,7 +172,7 @@ class TeamDao {
             $stmt->close();
         }
         
-        return csvString($queryResults);
+        return jsonString($queryResults, $headers);
     }
     
     // could be used for maybe a chord graph?
@@ -167,7 +196,7 @@ class TeamDao {
         $sql = $sql . "GROUP BY SP.NAME, SP.ID, PI.INJURY_TYPE_NAME "
                 . "ORDER BY COUNT(DISTINCT PI.ID) DESC, COUNT(MS.ID) DESC";
         
-        printf($sql);
+        //printf($sql);
         
         $queryResults = array();
         if ($stmt = $DB->prepare($sql)) {
@@ -196,7 +225,7 @@ class TeamDao {
             $stmt->close();
         }
         
-        return csvString($queryResults);
+        return jsonString($queryResults, $headers);
     }
 }
 
@@ -267,7 +296,8 @@ class LeagueDao {
             $stmt->bind_result($teamName, $teamId, $numGames);
 
             // add header entry
-            $queryResults[] = array("TEAM_NAME", "TEAM_ID", "GAMES_MISSED");
+            $headers = array("Team", "TeamId", "GamesLost");
+            
             /* fetch value */
             $total_count = 0;
             while ($stmt->fetch()) {
@@ -279,7 +309,7 @@ class LeagueDao {
             $stmt->close();
         }
         
-        return csvString($queryResults);
+        return jsonString($queryResults, $headers);
     }
     
     /**
@@ -325,7 +355,8 @@ class LeagueDao {
             $stmt->bind_result($teamName, $teamId, $injuryAvg);
 
             /* fetch value */
-            $queryResults[] = array("TEAM_NAME", "TEAM_ID", "INJURY_AVG");
+            //$queryResults[] = array("TEAM_NAME", "TEAM_ID", "INJURY_AVG");
+            $headers = array("Team", "TeamId", "GamesLost");
             
             /* fetch value */
             while ($stmt->fetch()) {
@@ -335,7 +366,7 @@ class LeagueDao {
             $stmt->close();
         }
         
-        return csvString($queryResults);
+        return jsonString($queryResults, $headers);
     }
     
     public function getInjuryReoccurencesByTeam($injuryCat = null) {
@@ -375,7 +406,7 @@ class LeagueDao {
             $stmt->bind_result($teamName, $teamId, $recCount);
 
             /* fetch value */
-            $queryResults[] = array("TEAM_NAME", "TEAM_ID", "REOCCURENCE_COUNT");
+            $headers = array("Team", "TeamId", "GamesLost");
 
             /* fetch value */
             while ($stmt->fetch()) {
@@ -385,7 +416,7 @@ class LeagueDao {
             $stmt->close();
         }
         
-        return csvString($queryResults);
+        return jsonString($queryResults, $headers);
     }
     
 }
