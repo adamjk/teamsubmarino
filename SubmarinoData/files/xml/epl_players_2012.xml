@@ -1,0 +1,666 @@
+<team team_id="660" type="club" soccertype="default" teamtype="default" club_name="Arsenal">
+<person person_id="110681" name="A. Wenger" type="coach" position="" nationality_id="76"/>
+<person person_id="725" name="Ł. Fabiański" type="player" position="Goalkeeper" nationality_id="155"/>
+<person person_id="16086" name="V. Mannone" type="player" position="Goalkeeper" nationality_id="100"/>
+<person person_id="102587" name="D. Martínez" type="player" position="Goalkeeper" nationality_id="16"/>
+<person person_id="166719" name="J. Shea" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="16085" name="W. Szczęsny" type="player" position="Goalkeeper" nationality_id="155"/>
+<person person_id="154243" name="M. Angha" type="player" position="Defender" nationality_id="185"/>
+<person person_id="235942" name="Bellerín" type="player" position="Defender" nationality_id="176"/>
+<person person_id="9103" name="André Santos" type="player" position="Defender" nationality_id="35"/>
+<person person_id="26204" name="K. Gibbs" type="player" position="Defender" nationality_id="68"/>
+<person person_id="102651" name="S. Hajrovic" type="player" position="Defender" nationality_id="185"/>
+<person person_id="142739" name="C. Jenkinson" type="player" position="Defender" nationality_id="68"/>
+<person person_id="37785" name="L. Koscielny" type="player" position="Defender" nationality_id="76"/>
+<person person_id="16" name="P. Mertesacker" type="player" position="Defender" nationality_id="80"/>
+<person person_id="169710" name="Miquel" type="player" position="Defender" nationality_id="176"/>
+<person person_id="3469" name="Nacho Monreal" type="player" position="Defender" nationality_id="176"/>
+<person person_id="264169" name="Elton Monteiro" type="player" position="Defender" nationality_id="156"/>
+<person person_id="1407" name="B. Sagna" type="player" position="Defender" nationality_id="76"/>
+<person person_id="1583" name="S. Squillaci" type="player" position="Defender" nationality_id="76"/>
+<person person_id="2181" name="T. Vermaelen" type="player" position="Defender" nationality_id="27"/>
+<person person_id="6880" name="A. Arshavin" type="player" position="Midfielder" nationality_id="160"/>
+<person person_id="2876" name="Arteta" type="player" position="Midfielder" nationality_id="176"/>
+<person person_id="18102" name="Cazorla" type="player" position="Midfielder" nationality_id="176"/>
+<person person_id="63904" name="F. Coquelin" type="player" position="Midfielder" nationality_id="76"/>
+<person person_id="2959" name="A. Diaby" type="player" position="Midfielder" nationality_id="76"/>
+<person person_id="266992" name="T. Eisfeld" type="player" position="Midfielder" nationality_id="80"/>
+<person person_id="213651" name="S. Gnabry" type="player" position="Midfielder" nationality_id="80"/>
+<person person_id="215017" name="J. Meade" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="66532" name="A. Ramsey" type="player" position="Midfielder" nationality_id="209"/>
+<person person_id="264" name="T. Rosický" type="player" position="Midfielder" nationality_id="59"/>
+<person person_id="61075" name="J. Wilshere" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="209626" name="N. Yennaris" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="215570" name="C. Akpom" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="279237" name="Z. Ansah" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="59504" name="O. Giroud" type="player" position="Attacker" nationality_id="76"/>
+<person person_id="13760" name="Y. Gervinho" type="player" position="Attacker" nationality_id="60"/>
+<person person_id="120695" name="A. Oxlade-Chamberlain" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="2053" name="L. Podolski" type="player" position="Attacker" nationality_id="80"/>
+<person person_id="194" name="T. Walcott" type="player" position="Attacker" nationality_id="68"/>
+</team>
+<team team_id="661" type="club" soccertype="default" teamtype="default" club_name="Chelsea">
+<person person_id="110679" name="Rafael Benítez" type="coach" position="" nationality_id="176"/>
+<person person_id="237" name="P. Čech" type="player" position="Goalkeeper" nationality_id="59"/>
+<person person_id="2525" name="Hilário" type="player" position="Goalkeeper" nationality_id="156"/>
+<person person_id="2813" name="R. Turnbull" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="182930" name="N. Aké" type="player" position="Defender" nationality_id="138"/>
+<person person_id="18099" name="Azpilicueta" type="player" position="Defender" nationality_id="176"/>
+<person person_id="21046" name="R. Bertrand" type="player" position="Defender" nationality_id="68"/>
+<person person_id="2797" name="G. Cahill" type="player" position="Defender" nationality_id="68"/>
+<person person_id="178" name="A. Cole" type="player" position="Defender" nationality_id="68"/>
+<person person_id="6456" name="B. Ivanović" type="player" position="Defender" nationality_id="224"/>
+<person person_id="16580" name="David Luiz" type="player" position="Defender" nationality_id="35"/>
+<person person_id="361" name="Paulo Ferreira" type="player" position="Defender" nationality_id="156"/>
+<person person_id="181" name="J. Terry" type="player" position="Defender" nationality_id="68"/>
+<person person_id="2721" name="Y. Benayoun" type="player" position="Midfielder" nationality_id="99"/>
+<person person_id="57860" name="Oscar" type="player" position="Midfielder" nationality_id="35"/>
+<person person_id="39358" name="E. Hazard" type="player" position="Midfielder" nationality_id="27"/>
+<person person_id="189" name="F. Lampard" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="546" name="F. Malouda" type="player" position="Midfielder" nationality_id="76"/>
+<person person_id="16899" name="M. Marin" type="player" position="Midfielder" nationality_id="80"/>
+<person person_id="25395" name="V. Moses" type="player" position="Midfielder" nationality_id="144"/>
+<person person_id="2536" name="J. Obi Mikel" type="player" position="Midfielder" nationality_id="144"/>
+<person person_id="97045" name="Oriol Romeu" type="player" position="Midfielder" nationality_id="176"/>
+<person person_id="10085" name="Ramires" type="player" position="Midfielder" nationality_id="35"/>
+<person person_id="271288" name="G. Saville" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="13192" name="D. Ba" type="player" position="Attacker" nationality_id="166"/>
+<person person_id="19106" name="Mata" type="player" position="Attacker" nationality_id="176"/>
+<person person_id="334" name="Fernando Torres" type="player" position="Attacker" nationality_id="176"/>
+</team>
+<team team_id="662" type="club" soccertype="default" teamtype="default" club_name="Manchester United">
+<person person_id="110678" name="A. Ferguson" type="coach" position="" nationality_id="165"/>
+<person person_id="63899" name="B. Amos" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="61954" name="De Gea" type="player" position="Goalkeeper" nationality_id="176"/>
+<person person_id="196266" name="S. Johnstone" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="11817" name="A. Lindegaard" type="player" position="Goalkeeper" nationality_id="61"/>
+<person person_id="24652" name="A. Büttner" type="player" position="Defender" nationality_id="138"/>
+<person person_id="20687" name="J. Evans" type="player" position="Defender" nationality_id="145"/>
+<person person_id="2909" name="P. Evra" type="player" position="Defender" nationality_id="76"/>
+<person person_id="179" name="R. Ferdinand" type="player" position="Defender" nationality_id="68"/>
+<person person_id="97299" name="P. Jones" type="player" position="Defender" nationality_id="68"/>
+<person person_id="55715" name="Rafael" type="player" position="Defender" nationality_id="35"/>
+<person person_id="79474" name="C. Smalling" type="player" position="Defender" nationality_id="68"/>
+<person person_id="158660" name="M. Vermijl" type="player" position="Defender" nationality_id="27"/>
+<person person_id="756" name="N. Vidić" type="player" position="Defender" nationality_id="224"/>
+<person person_id="4647" name="Nani" type="player" position="Midfielder" nationality_id="156"/>
+<person person_id="183" name="M. Carrick" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="70764" name="T. Cleverley" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="209643" name="L. Cole" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="10369" name="Anderson" type="player" position="Midfielder" nationality_id="35"/>
+<person person_id="2911" name="D. Fletcher" type="player" position="Midfielder" nationality_id="165"/>
+<person person_id="2912" name="R. Giggs" type="player" position="Midfielder" nationality_id="209"/>
+<person person_id="140764" name="N. Powell" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="2915" name="P. Scholes" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="177210" name="R. Tunnicliffe" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="284" name="A. Valencia" type="player" position="Midfielder" nationality_id="65"/>
+<person person_id="2553" name="A. Young" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="53937" name="J. Hernández" type="player" position="Attacker" nationality_id="129"/>
+<person person_id="25072" name="S. Kagawa" type="player" position="Attacker" nationality_id="102"/>
+<person person_id="193" name="W. Rooney" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="49" name="R. van Persie" type="player" position="Attacker" nationality_id="138"/>
+<person person_id="53886" name="D. Welbeck" type="player" position="Attacker" nationality_id="68"/>
+</team>
+<team team_id="663" type="club" soccertype="default" teamtype="default" club_name="Liverpool">
+<person person_id="154853" name="B. Rodgers" type="coach" position="" nationality_id="145"/>
+<person person_id="59421" name="P. Gulácsi" type="player" position="Goalkeeper" nationality_id="92"/>
+<person person_id="5190" name="B. Jones" type="player" position="Goalkeeper" nationality_id="19"/>
+<person person_id="318" name="Pepe Reina" type="player" position="Goalkeeper" nationality_id="176"/>
+<person person_id="160922" name="D. Ward" type="player" position="Goalkeeper" nationality_id="209"/>
+<person person_id="2968" name="D. Agger" type="player" position="Defender" nationality_id="61"/>
+<person person_id="177" name="J. Carragher" type="player" position="Defender" nationality_id="68"/>
+<person person_id="177071" name="C. Coady" type="player" position="Defender" nationality_id="68"/>
+<person person_id="77863" name="S. Coates" type="player" position="Defender" nationality_id="204"/>
+<person person_id="16058" name="José Enrique" type="player" position="Defender" nationality_id="176"/>
+<person person_id="166828" name="J. Flanagan" type="player" position="Defender" nationality_id="68"/>
+<person person_id="2641" name="G. Johnson" type="player" position="Defender" nationality_id="68"/>
+<person person_id="61076" name="M. Kelly" type="player" position="Defender" nationality_id="68"/>
+<person person_id="130344" name="J. Robinson" type="player" position="Defender" nationality_id="68"/>
+<person person_id="192186" name="S. Sama" type="player" position="Defender" nationality_id="80"/>
+<person person_id="5940" name="M. Škrtel" type="player" position="Defender" nationality_id="171"/>
+<person person_id="155132" name="A. Wisdom" type="player" position="Defender" nationality_id="68"/>
+<person person_id="47573" name="J. Allen" type="player" position="Midfielder" nationality_id="209"/>
+<person person_id="82507" name="Philippe Coutinho" type="player" position="Midfielder" nationality_id="35"/>
+<person person_id="185" name="S. Downing" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="217913" name="Suso" type="player" position="Midfielder" nationality_id="176"/>
+<person person_id="186" name="S. Gerrard" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="48010" name="J. Henderson" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="9201" name="Lucas Leiva" type="player" position="Midfielder" nationality_id="35"/>
+<person person_id="51243" name="J. Shelvey" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="160414" name="R. Sterling" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="65058" name="O. Assaidi" type="player" position="Attacker" nationality_id="133"/>
+<person person_id="95826" name="F. Borini" type="player" position="Attacker" nationality_id="100"/>
+<person person_id="269271" name="J. Sinclair" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="5206" name="D. Sturridge" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="2290" name="L. Suárez" type="player" position="Attacker" nationality_id="204"/>
+<person person_id="160104" name="S. Yeşil" type="player" position="Attacker" nationality_id="80"/>
+</team>
+<team team_id="664" type="club" soccertype="default" teamtype="default" club_name="Newcastle United">
+<person person_id="121739" name="A. Pardew" type="coach" position="" nationality_id="68"/>
+<person person_id="197663" name="J. Alnwick" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="5300" name="R. Elliot" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="2888" name="S. Harper" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="5256" name="T. Krul" type="player" position="Goalkeeper" nationality_id="138"/>
+<person person_id="105" name="F. Coloccini" type="player" position="Defender" nationality_id="16"/>
+<person person_id="2066" name="M. Debuchy" type="player" position="Defender" nationality_id="76"/>
+<person person_id="113186" name="S. Ferguson" type="player" position="Defender" nationality_id="145"/>
+<person person_id="160594" name="M. Haïdara" type="player" position="Defender" nationality_id="76"/>
+<person person_id="235506" name="K. Mbabu" type="player" position="Defender" nationality_id="185"/>
+<person person_id="47495" name="J. Perch" type="player" position="Defender" nationality_id="68"/>
+<person person_id="61131" name="D. Santon" type="player" position="Defender" nationality_id="100"/>
+<person person_id="20278" name="D. Simpson" type="player" position="Defender" nationality_id="68"/>
+<person person_id="277713" name="R. Streete" type="player" position="Defender" nationality_id="68"/>
+<person person_id="97294" name="J. Tavernier" type="player" position="Defender" nationality_id="68"/>
+<person person_id="2671" name="R. Taylor" type="player" position="Defender" nationality_id="68"/>
+<person person_id="2892" name="S. Taylor" type="player" position="Defender" nationality_id="68"/>
+<person person_id="50776" name="M. Williamson" type="player" position="Defender" nationality_id="68"/>
+<person person_id="37674" name="M. Yanga-Mbiwa" type="player" position="Defender" nationality_id="76"/>
+<person person_id="87462" name="R. Amalfitano" type="player" position="Midfielder" nationality_id="76"/>
+<person person_id="24607" name="V. Anita" type="player" position="Midfielder" nationality_id="138"/>
+<person person_id="1588" name="H. Ben Arfa" type="player" position="Midfielder" nationality_id="76"/>
+<person person_id="142734" name="G. Bigirimana" type="player" position="Midfielder" nationality_id="40"/>
+<person person_id="2056" name="Y. Cabaye" type="player" position="Midfielder" nationality_id="76"/>
+<person person_id="15647" name="D. Gosling" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="3206" name="J. Gutiérrez" type="player" position="Midfielder" nationality_id="16"/>
+<person person_id="1469" name="S. Marveaux" type="player" position="Midfielder" nationality_id="76"/>
+<person person_id="174732" name="M. Richardson" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="13622" name="M. Sissoko" type="player" position="Midfielder" nationality_id="76"/>
+<person person_id="13562" name="C. Tioté" type="player" position="Midfielder" nationality_id="60"/>
+<person person_id="92606" name="H. Vučkič" type="player" position="Midfielder" nationality_id="172"/>
+<person person_id="190545" name="Sammy Ameobi" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="2905" name="Shola Ameobi" type="player" position="Attacker" nationality_id="144"/>
+<person person_id="261826" name="A. Campbell" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="37915" name="P. Cissé" type="player" position="Attacker" nationality_id="166"/>
+<person person_id="13655" name="Y. Gouffran" type="player" position="Attacker" nationality_id="76"/>
+<person person_id="217153" name="Y. Moyo" type="player" position="Attacker" nationality_id="52"/>
+<person person_id="8817" name="G. Obertan" type="player" position="Attacker" nationality_id="76"/>
+<person person_id="88008" name="N. Ranger" type="player" position="Attacker" nationality_id="68"/>
+</team>
+<team team_id="665" type="club" soccertype="default" teamtype="default" club_name="Aston Villa">
+<person person_id="140511" name="P. Lambert" type="coach" position="" nationality_id="165"/>
+<person person_id="2887" name="S. Given" type="player" position="Goalkeeper" nationality_id="98"/>
+<person person_id="6912" name="B. Guzan" type="player" position="Goalkeeper" nationality_id="203"/>
+<person person_id="15812" name="A. Marshall" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="101522" name="N. Baker" type="player" position="Defender" nationality_id="68"/>
+<person person_id="72258" name="J. Bennett" type="player" position="Defender" nationality_id="68"/>
+<person person_id="89489" name="C. Clark" type="player" position="Defender" nationality_id="98"/>
+<person person_id="2850" name="R. Dunne" type="player" position="Defender" nationality_id="98"/>
+<person person_id="90118" name="E. Lichaj" type="player" position="Defender" nationality_id="203"/>
+<person person_id="85440" name="M. Lowton" type="player" position="Defender" nationality_id="68"/>
+<person person_id="75124" name="E. Stevens" type="player" position="Defender" nationality_id="98"/>
+<person person_id="2248" name="R. Vlaar" type="player" position="Defender" nationality_id="138"/>
+<person person_id="191633" name="D. Williams" type="player" position="Defender" nationality_id="98"/>
+<person person_id="73931" name="M. Albrighton" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="47910" name="B. Bannan" type="player" position="Midfielder" nationality_id="165"/>
+<person person_id="191635" name="S. Carruthers" type="player" position="Midfielder" nationality_id="98"/>
+<person person_id="53097" name="F. Delph" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="2466" name="K. El Ahmadi" type="player" position="Midfielder" nationality_id="133"/>
+<person person_id="97362" name="G. Gardner" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="97587" name="C. Herd" type="player" position="Midfielder" nationality_id="19"/>
+<person person_id="2372" name="B. Holman" type="player" position="Midfielder" nationality_id="19"/>
+<person person_id="2854" name="S. Ireland" type="player" position="Midfielder" nationality_id="98"/>
+<person person_id="2898" name="C. N'Zogbia" type="player" position="Midfielder" nationality_id="76"/>
+<person person_id="138183" name="Y. Sylla" type="player" position="Midfielder" nationality_id="76"/>
+<person person_id="67549" name="A. Westwood" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="2812" name="G. Agbonlahor" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="2784" name="D. Bent" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="53423" name="C. Benteke" type="player" position="Attacker" nationality_id="27"/>
+<person person_id="111936" name="J. Bowery" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="191797" name="G. Burke" type="player" position="Attacker" nationality_id="98"/>
+<person person_id="50993" name="S. Dawkins" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="89062" name="A. Weimann" type="player" position="Attacker" nationality_id="20"/>
+</team>
+<team team_id="667" type="club" soccertype="default" teamtype="default" club_name="Fulham">
+<person person_id="110868" name="M. Jol" type="coach" position="" nationality_id="138"/>
+<person person_id="120247" name="N. Etheridge" type="player" position="Goalkeeper" nationality_id="154"/>
+<person person_id="702" name="M. Schwarzer" type="player" position="Goalkeeper" nationality_id="19"/>
+<person person_id="150496" name="C. Somogyi" type="player" position="Goalkeeper" nationality_id="92"/>
+<person person_id="15481" name="C. Baird" type="player" position="Defender" nationality_id="145"/>
+<person person_id="16075" name="M. Briggs" type="player" position="Defender" nationality_id="68"/>
+<person person_id="125447" name="J. Grimmer" type="player" position="Defender" nationality_id="165"/>
+<person person_id="4533" name="B. Hangeland" type="player" position="Defender" nationality_id="146"/>
+<person person_id="2795" name="A. Hughes" type="player" position="Defender" nationality_id="145"/>
+<person person_id="51809" name="S. Manolev" type="player" position="Defender" nationality_id="38"/>
+<person person_id="16508" name="S. Riether" type="player" position="Defender" nationality_id="80"/>
+<person person_id="2383" name="J. Riise" type="player" position="Defender" nationality_id="146"/>
+<person person_id="204" name="P. Senderos" type="player" position="Defender" nationality_id="185"/>
+<person person_id="278390" name="C. Banya" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="2878" name="S. Davies" type="player" position="Midfielder" nationality_id="209"/>
+<person person_id="1876" name="A. Dejagah" type="player" position="Midfielder" nationality_id="96"/>
+<person person_id="1587" name="M. Diarra" type="player" position="Midfielder" nationality_id="125"/>
+<person person_id="2897" name="D. Duff" type="player" position="Midfielder" nationality_id="98"/>
+<person person_id="2177" name="U. Emanuelson" type="player" position="Midfielder" nationality_id="138"/>
+<person person_id="57755" name="E. Enoh" type="player" position="Midfielder" nationality_id="42"/>
+<person person_id="194647" name="K. Frei" type="player" position="Midfielder" nationality_id="196"/>
+<person person_id="195224" name="E. Frimpong" type="player" position="Midfielder" nationality_id="81"/>
+<person person_id="118840" name="A. Kacaniklic" type="player" position="Midfielder" nationality_id="184"/>
+<person person_id="5909" name="G. Karagounis" type="player" position="Midfielder" nationality_id="82"/>
+<person person_id="102652" name="P. Kasami" type="player" position="Midfielder" nationality_id="185"/>
+<person person_id="2917" name="K. Richardson" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="2576" name="S. Sidwell" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="2948" name="D. Berbatov" type="player" position="Attacker" nationality_id="38"/>
+<person person_id="11357" name="M. Petrić" type="player" position="Attacker" nationality_id="56"/>
+<person person_id="10427" name="H. Rodallega" type="player" position="Attacker" nationality_id="51"/>
+<person person_id="10045" name="B. Ruiz" type="player" position="Attacker" nationality_id="55"/>
+</team>
+<team team_id="670" type="club" soccertype="default" teamtype="default" club_name="Southampton">
+<person person_id="110787" name="M. Pochettino" type="coach" position="" nationality_id="16"/>
+<person person_id="724" name="A. Boruc" type="player" position="Goalkeeper" nationality_id="155"/>
+<person person_id="15479" name="K. Davis" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="199612" name="P. Gazzaniga" type="player" position="Goalkeeper" nationality_id="16"/>
+<person person_id="15782" name="D. Butterfield" type="player" position="Defender" nationality_id="68"/>
+<person person_id="66379" name="N. Clyne" type="player" position="Defender" nationality_id="68"/>
+<person person_id="15805" name="José Fonte" type="player" position="Defender" nationality_id="156"/>
+<person person_id="28945" name="V. Forren" type="player" position="Defender" nationality_id="146"/>
+<person person_id="47080" name="D. Fox" type="player" position="Defender" nationality_id="165"/>
+<person person_id="8299" name="J. Hooiveld" type="player" position="Defender" nationality_id="138"/>
+<person person_id="53092" name="F. Richardson" type="player" position="Defender" nationality_id="68"/>
+<person person_id="209805" name="L. Shaw" type="player" position="Defender" nationality_id="68"/>
+<person person_id="154121" name="J. Stephens" type="player" position="Defender" nationality_id="68"/>
+<person person_id="5803" name="M. Yoshida" type="player" position="Defender" nationality_id="102"/>
+<person person_id="235617" name="C. Chambers" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="15428" name="R. Chaplow" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="20801" name="J. Cork" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="2803" name="S. Davis" type="player" position="Midfielder" nationality_id="145"/>
+<person person_id="18664" name="Guly" type="player" position="Midfielder" nationality_id="35"/>
+<person person_id="268948" name="D. Gape" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="275905" name="L. Isgrove" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="15497" name="A. Lallana" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="46474" name="J. Puncheon" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="91722" name="G. Ramírez" type="player" position="Midfielder" nationality_id="204"/>
+<person person_id="268949" name="A. Robinson" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="33245" name="M. Schneiderlin" type="player" position="Midfielder" nationality_id="76"/>
+<person person_id="200872" name="J. Ward-Prowse" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="50849" name="R. Lambert" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="48599" name="T. Lee" type="player" position="Attacker" nationality_id="102"/>
+<person person_id="21641" name="E. Mayuka" type="player" position="Attacker" nationality_id="211"/>
+<person person_id="15915" name="J. Rodriguez" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="262817" name="J. Sinclair" type="player" position="Attacker" nationality_id="68"/>
+</team>
+<team team_id="674" type="club" soccertype="default" teamtype="default" club_name="Everton">
+<person person_id="110683" name="D. Moyes" type="coach" position="" nationality_id="165"/>
+<person person_id="632" name="T. Howard" type="player" position="Goalkeeper" nationality_id="203"/>
+<person person_id="12607" name="J. Mucha" type="player" position="Goalkeeper" nationality_id="171"/>
+<person person_id="2672" name="L. Baines" type="player" position="Defender" nationality_id="68"/>
+<person person_id="280903" name="T. Browning" type="player" position="Defender" nationality_id="68"/>
+<person person_id="2846" name="S. Distin" type="player" position="Defender" nationality_id="76"/>
+<person person_id="90884" name="S. Duffy" type="player" position="Defender" nationality_id="98"/>
+<person person_id="96307" name="L. Garbutt" type="player" position="Defender" nationality_id="68"/>
+<person person_id="17" name="J. Heitinga" type="player" position="Defender" nationality_id="138"/>
+<person person_id="2868" name="T. Hibbert" type="player" position="Defender" nationality_id="68"/>
+<person person_id="2600" name="P. Jagielka" type="player" position="Defender" nationality_id="68"/>
+<person person_id="42665" name="B. Oviedo" type="player" position="Defender" nationality_id="55"/>
+<person person_id="189445" name="J. Stones" type="player" position="Defender" nationality_id="68"/>
+<person person_id="7158" name="S. Coleman" type="player" position="Midfielder" nationality_id="98"/>
+<person person_id="13519" name="M. Fellaini" type="player" position="Midfielder" nationality_id="27"/>
+<person person_id="20491" name="D. Gibson" type="player" position="Midfielder" nationality_id="98"/>
+<person person_id="29" name="T. Hitzlsperger" type="player" position="Midfielder" nationality_id="80"/>
+<person person_id="2874" name="P. Neville" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="2880" name="L. Osman" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="1960" name="S. Pienaar" type="player" position="Midfielder" nationality_id="175"/>
+<person person_id="230087" name="Francisco Junior" type="player" position="Midfielder" nationality_id="156"/>
+<person person_id="2886" name="V. Anichebe" type="player" position="Attacker" nationality_id="144"/>
+<person person_id="68044" name="M. Gueye" type="player" position="Attacker" nationality_id="166"/>
+<person person_id="13612" name="N. Jelavić" type="player" position="Attacker" nationality_id="56"/>
+<person person_id="154189" name="M. Kennedy" type="player" position="Attacker" nationality_id="165"/>
+<person person_id="110667" name="C. McAleny" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="2073" name="K. Mirallas" type="player" position="Attacker" nationality_id="27"/>
+<person person_id="1069" name="S. Naismith" type="player" position="Attacker" nationality_id="165"/>
+<person person_id="77882" name="A. Vellios" type="player" position="Attacker" nationality_id="82"/>
+</team>
+<team team_id="675" type="club" soccertype="default" teamtype="default" club_name="Tottenham Hotspur">
+<person person_id="140282" name="André Villas-Boas" type="coach" position="" nationality_id="156"/>
+<person person_id="2681" name="B. Friedel" type="player" position="Goalkeeper" nationality_id="203"/>
+<person person_id="1255" name="H. Lloris" type="player" position="Goalkeeper" nationality_id="76"/>
+<person person_id="2938" name="B. Assou-Ekotto" type="player" position="Defender" nationality_id="42"/>
+<person person_id="85469" name="S. Caulker" type="player" position="Defender" nationality_id="68"/>
+<person person_id="2932" name="M. Dawson" type="player" position="Defender" nationality_id="68"/>
+<person person_id="158573" name="E. Fryers" type="player" position="Defender" nationality_id="68"/>
+<person person_id="538" name="W. Gallas" type="player" position="Defender" nationality_id="76"/>
+<person person_id="1406" name="Y. Kaboul" type="player" position="Defender" nationality_id="76"/>
+<person person_id="21490" name="K. Naughton" type="player" position="Defender" nationality_id="68"/>
+<person person_id="208877" name="K. Stewart" type="player" position="Defender" nationality_id="68"/>
+<person person_id="2190" name="J. Vertonghen" type="player" position="Defender" nationality_id="27"/>
+<person person_id="68532" name="K. Walker" type="player" position="Defender" nationality_id="68"/>
+<person person_id="15482" name="G. Bale" type="player" position="Midfielder" nationality_id="209"/>
+<person person_id="2706" name="D. Bentley" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="173621" name="T. Carroll" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="2197" name="M. Dembélé" type="player" position="Midfielder" nationality_id="27"/>
+<person person_id="664" name="C. Dempsey" type="player" position="Midfielder" nationality_id="203"/>
+<person person_id="57544" name="L. Holtby" type="player" position="Midfielder" nationality_id="80"/>
+<person person_id="2933" name="T. Huddlestone" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="190" name="A. Lennon" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="50907" name="J. Livermore" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="2900" name="S. Parker" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="73406" name="D. Parrett" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="65306" name="Sandro" type="player" position="Midfielder" nationality_id="35"/>
+<person person_id="57707" name="G. Sigurdsson" type="player" position="Midfielder" nationality_id="93"/>
+<person person_id="598" name="E. Adebayor" type="player" position="Attacker" nationality_id="192"/>
+<person person_id="2950" name="J. Defoe" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="68626" name="J. Obika" type="player" position="Attacker" nationality_id="68"/>
+</team>
+<team team_id="676" type="club" soccertype="default" teamtype="default" club_name="Manchester City">
+<person person_id="110800" name="R. Mancini" type="coach" position="" nationality_id="100"/>
+<person person_id="2842" name="J. Hart" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="157672" name="E. Johansen" type="player" position="Goalkeeper" nationality_id="146"/>
+<person person_id="12275" name="C. Pantilimon" type="player" position="Goalkeeper" nationality_id="159"/>
+<person person_id="2865" name="R. Wright" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="2956" name="G. Clichy" type="player" position="Defender" nationality_id="76"/>
+<person person_id="17782" name="A. Kolarov" type="player" position="Defender" nationality_id="224"/>
+<person person_id="1998" name="V. Kompany" type="player" position="Defender" nationality_id="27"/>
+<person person_id="2873" name="J. Lescott" type="player" position="Defender" nationality_id="68"/>
+<person person_id="160420" name="C. Meppen-Walters" type="player" position="Defender" nationality_id="68"/>
+<person person_id="134365" name="M. Nastasić" type="player" position="Defender" nationality_id="224"/>
+<person person_id="161281" name="K. Rekik" type="player" position="Defender" nationality_id="138"/>
+<person person_id="2852" name="M. Richards" type="player" position="Defender" nationality_id="68"/>
+<person person_id="3977" name="Maicon" type="player" position="Defender" nationality_id="35"/>
+<person person_id="300" name="K. Touré" type="player" position="Defender" nationality_id="60"/>
+<person person_id="3259" name="P. Zabaleta" type="player" position="Defender" nationality_id="16"/>
+<person person_id="2800" name="G. Barry" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="193211" name="G. Evans" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="3010" name="Javi García" type="player" position="Midfielder" nationality_id="176"/>
+<person person_id="3026" name="David Silva" type="player" position="Midfielder" nationality_id="176"/>
+<person person_id="214882" name="Marcos Lopes" type="player" position="Midfielder" nationality_id="156"/>
+<person person_id="2899" name="J. Milner" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="1538" name="S. Nasri" type="player" position="Midfielder" nationality_id="76"/>
+<person person_id="175427" name="A. Razak" type="player" position="Midfielder" nationality_id="60"/>
+<person person_id="23173" name="J. Rodwell" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="20707" name="S. Sinclair" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="149750" name="Denís Suárez" type="player" position="Midfielder" nationality_id="176"/>
+<person person_id="4496" name="Y. Touré" type="player" position="Midfielder" nationality_id="60"/>
+<person person_id="3051" name="S. Agüero" type="player" position="Attacker" nationality_id="16"/>
+<person person_id="20588" name="E. Džeko" type="player" position="Attacker" nationality_id="33"/>
+<person person_id="122" name="C. Tévez" type="player" position="Attacker" nationality_id="16"/>
+</team>
+<team team_id="677" type="club" soccertype="default" teamtype="default" club_name="Norwich City">
+<person person_id="136328" name="C. Hughton" type="coach" position="" nationality_id="98"/>
+<person person_id="51034" name="M. Bunn" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="15565" name="L. Camp" type="player" position="Goalkeeper" nationality_id="145"/>
+<person person_id="2867" name="J. Ruddy" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="98938" name="J. Steer" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="15440" name="L. Barnett" type="player" position="Defender" nationality_id="68"/>
+<person person_id="20944" name="S. Bassong" type="player" position="Defender" nationality_id="42"/>
+<person person_id="50574" name="R. Bennett" type="player" position="Defender" nationality_id="68"/>
+<person person_id="100220" name="G. Francomb" type="player" position="Defender" nationality_id="68"/>
+<person person_id="3233" name="Garrido" type="player" position="Defender" nationality_id="176"/>
+<person person_id="51076" name="R. Martin" type="player" position="Defender" nationality_id="165"/>
+<person person_id="50767" name="M. Tierney" type="player" position="Defender" nationality_id="68"/>
+<person person_id="15762" name="M. Turner" type="player" position="Defender" nationality_id="68"/>
+<person person_id="878" name="S. Whittaker" type="player" position="Defender" nationality_id="165"/>
+<person person_id="50442" name="E. Bennett" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="15953" name="D. Fox" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="15954" name="W. Hoolahan" type="player" position="Midfielder" nationality_id="98"/>
+<person person_id="53096" name="J. Howson" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="53098" name="B. Johnson" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="51120" name="A. Pilkington" type="player" position="Midfielder" nationality_id="98"/>
+<person person_id="46457" name="K. Smith" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="38569" name="R. Snodgrass" type="player" position="Midfielder" nationality_id="165"/>
+<person person_id="15494" name="A. Surman" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="7909" name="A. Tettey" type="player" position="Midfielder" nationality_id="146"/>
+<person person_id="53106" name="L. Becchio" type="player" position="Attacker" nationality_id="16"/>
+<person person_id="50760" name="G. Holt" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="50554" name="S. Jackson" type="player" position="Attacker" nationality_id="43"/>
+<person person_id="7224" name="K. Kamara" type="player" position="Attacker" nationality_id="169"/>
+<person person_id="158575" name="H. Kane" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="269268" name="J. Murphy" type="player" position="Attacker" nationality_id="68"/>
+</team>
+<team team_id="678" type="club" soccertype="default" teamtype="default" club_name="West Bromwich Albion">
+<person person_id="247183" name="S. Clarke" type="coach" position="" nationality_id="165"/>
+<person person_id="15418" name="L. Daniels" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="2528" name="B. Foster" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="15756" name="B. Myhill" type="player" position="Goalkeeper" nationality_id="209"/>
+<person person_id="15631" name="B. Jones" type="player" position="Defender" nationality_id="68"/>
+<person person_id="15703" name="G. McAuley" type="player" position="Defender" nationality_id="145"/>
+<person person_id="2364" name="J. Olsson" type="player" position="Defender" nationality_id="184"/>
+<person person_id="19169" name="G. Popov" type="player" position="Defender" nationality_id="120"/>
+<person person_id="2796" name="L. Ridgewell" type="player" position="Defender" nationality_id="68"/>
+<person person_id="4565" name="G. Tamaş" type="player" position="Defender" nationality_id="159"/>
+<person person_id="15512" name="C. Brunt" type="player" position="Midfielder" nationality_id="145"/>
+<person person_id="38568" name="G. Dorrans" type="player" position="Midfielder" nationality_id="165"/>
+<person person_id="15434" name="Z. Gera" type="player" position="Midfielder" nationality_id="92"/>
+<person person_id="2829" name="J. Morrison" type="player" position="Midfielder" nationality_id="165"/>
+<person person_id="5926" name="Y. Mulumbu" type="player" position="Midfielder" nationality_id="53"/>
+<person person_id="2693" name="S. Reid" type="player" position="Midfielder" nationality_id="98"/>
+<person person_id="2776" name="J. Thomas" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="109631" name="G. Thorne" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="15089" name="C. Yacob" type="player" position="Midfielder" nationality_id="16"/>
+<person person_id="149485" name="S. Berahino" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="2493" name="M. Fortuné" type="player" position="Attacker" nationality_id="76"/>
+<person person_id="2586" name="S. Long" type="player" position="Attacker" nationality_id="98"/>
+<person person_id="79495" name="R. Lukaku" type="player" position="Attacker" nationality_id="27"/>
+<person person_id="222647" name="A. Nabi" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="2074" name="P. Odemwingie" type="player" position="Attacker" nationality_id="144"/>
+<person person_id="170" name="M. Rosenberg" type="player" position="Attacker" nationality_id="184"/>
+</team>
+<team team_id="683" type="club" soccertype="default" teamtype="default" club_name="Sunderland">
+<person person_id="110688" name="M. O'Neill" type="coach" position="" nationality_id="145"/>
+<person person_id="13465" name="S. Mignolet" type="player" position="Goalkeeper" nationality_id="27"/>
+<person person_id="46005" name="K. Westwood" type="player" position="Goalkeeper" nationality_id="98"/>
+<person person_id="4844" name="P. Bardsley" type="player" position="Defender" nationality_id="165"/>
+<person person_id="2890" name="T. Bramble" type="player" position="Defender" nationality_id="68"/>
+<person person_id="2910" name="W. Brown" type="player" position="Defender" nationality_id="68"/>
+<person person_id="12943" name="Carlos Cuéllar" type="player" position="Defender" nationality_id="176"/>
+<person person_id="5892" name="M. Kilgallon" type="player" position="Defender" nationality_id="68"/>
+<person person_id="11390" name="K. Mangane" type="player" position="Defender" nationality_id="166"/>
+<person person_id="2916" name="J. O'Shea" type="player" position="Defender" nationality_id="98"/>
+<person person_id="2834" name="L. Cattermole" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="48006" name="J. Colback" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="2808" name="C. Gardner" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="2833" name="A. Johnson" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="16025" name="S. Larsson" type="player" position="Midfielder" nationality_id="184"/>
+<person person_id="75127" name="J. McClean" type="player" position="Midfielder" nationality_id="98"/>
+<person person_id="39145" name="A. N'Diaye" type="player" position="Midfielder" nationality_id="76"/>
+<person person_id="16050" name="D. Rose" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="1239" name="S. Sessègnon" type="player" position="Midfielder" nationality_id="29"/>
+<person person_id="51277" name="D. Vaughan" type="player" position="Midfielder" nationality_id="209"/>
+<person person_id="890" name="S. Fletcher" type="player" position="Attacker" nationality_id="165"/>
+<person person_id="50870" name="D. Graham" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="2884" name="J. McFadden" type="player" position="Attacker" nationality_id="165"/>
+<person person_id="76920" name="C. Wickham" type="player" position="Attacker" nationality_id="68"/>
+</team>
+<team team_id="684" type="club" soccertype="default" teamtype="default" club_name="West Ham United">
+<person person_id="110693" name="S. Allardyce" type="coach" position="" nationality_id="68"/>
+<person person_id="2619" name="J. Jääskeläinen" type="player" position="Goalkeeper" nationality_id="75"/>
+<person person_id="102648" name="R. Spiegel" type="player" position="Goalkeeper" nationality_id="185"/>
+<person person_id="235883" name="L. Chambers" type="player" position="Defender" nationality_id="68"/>
+<person person_id="2717" name="J. Collins" type="player" position="Defender" nationality_id="209"/>
+<person person_id="303" name="G. Demel" type="player" position="Defender" nationality_id="60"/>
+<person person_id="222487" name="C. Driver" type="player" position="Defender" nationality_id="68"/>
+<person person_id="2710" name="G. McCartney" type="player" position="Defender" nationality_id="145"/>
+<person person_id="2624" name="J. O'Brien" type="player" position="Defender" nationality_id="98"/>
+<person person_id="2817" name="E. Pogatetz" type="player" position="Defender" nationality_id="20"/>
+<person person_id="216849" name="D. Potts" type="player" position="Defender" nationality_id="68"/>
+<person person_id="11749" name="W. Reid" type="player" position="Defender" nationality_id="141"/>
+<person person_id="61087" name="J. Spence" type="player" position="Defender" nationality_id="68"/>
+<person person_id="23292" name="J. Tomkins" type="player" position="Defender" nationality_id="68"/>
+<person person_id="184" name="J. Cole" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="23293" name="J. Collison" type="player" position="Midfielder" nationality_id="209"/>
+<person person_id="58677" name="M. Diamé" type="player" position="Midfielder" nationality_id="166"/>
+<person person_id="15415" name="M. Jarvis" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="180650" name="S. Lletget" type="player" position="Midfielder" nationality_id="203"/>
+<person person_id="203972" name="G. Moncur" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="5320" name="M. Noble" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="2627" name="K. Nolan" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="2652" name="G. O'Neil" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="2650" name="M. Taylor" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="5310" name="A. Carroll" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="1495" name="M. Chamakh" type="player" position="Attacker" nationality_id="133"/>
+<person person_id="2729" name="C. Cole" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="160423" name="M. Fanimo" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="280950" name="E. Lee" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="194916" name="S. Maguire" type="player" position="Attacker" nationality_id="98"/>
+<person person_id="13759" name="M. Maïga" type="player" position="Attacker" nationality_id="125"/>
+<person person_id="32327" name="Wellington Paulista" type="player" position="Attacker" nationality_id="35"/>
+<person person_id="1328" name="F. Piquionne" type="player" position="Attacker" nationality_id="229"/>
+<person person_id="191219" name="D. Tombides" type="player" position="Attacker" nationality_id="19"/>
+<person person_id="2635" name="Ricardo Vaz Té" type="player" position="Attacker" nationality_id="156"/>
+</team>
+<team team_id="686" type="club" soccertype="default" teamtype="default" club_name="Wigan Athletic">
+<person person_id="110698" name="Roberto Martínez" type="coach" position="" nationality_id="176"/>
+<person person_id="10872" name="Ali Al Habsi" type="player" position="Goalkeeper" nationality_id="147"/>
+<person person_id="2662" name="M. Pollitt" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="95877" name="Joel" type="player" position="Goalkeeper" nationality_id="176"/>
+<person person_id="13589" name="A. Alcáraz" type="player" position="Defender" nationality_id="152"/>
+<person person_id="2669" name="E. Boyce" type="player" position="Defender" nationality_id="25"/>
+<person person_id="169721" name="A. Buxton" type="player" position="Defender" nationality_id="68"/>
+<person person_id="783" name="G. Caldwell" type="player" position="Defender" nationality_id="165"/>
+<person person_id="217643" name="Eduard Campabadal" type="player" position="Defender" nationality_id="176"/>
+<person person_id="10243" name="M. Figueroa" type="player" position="Defender" nationality_id="90"/>
+<person person_id="143805" name="Román Golobart" type="player" position="Defender" nationality_id="176"/>
+<person person_id="61085" name="Piscu" type="player" position="Defender" nationality_id="176"/>
+<person person_id="259612" name="J. McCormack" type="player" position="Defender" nationality_id="68"/>
+<person person_id="259611" name="C. Morris" type="player" position="Defender" nationality_id="68"/>
+<person person_id="3542" name="Ramis" type="player" position="Defender" nationality_id="176"/>
+<person person_id="169720" name="D. Redmond" type="player" position="Defender" nationality_id="68"/>
+<person person_id="2348" name="R. Stam" type="player" position="Defender" nationality_id="138"/>
+<person person_id="22036" name="J. Beausejour" type="player" position="Midfielder" nationality_id="48"/>
+<person person_id="17889" name="Crusat" type="player" position="Midfielder" nationality_id="176"/>
+<person person_id="24924" name="R. Espinoza" type="player" position="Midfielder" nationality_id="90"/>
+<person person_id="88007" name="F. Fyvie" type="player" position="Midfielder" nationality_id="165"/>
+<person person_id="2992" name="Jordi Gómez" type="player" position="Midfielder" nationality_id="176"/>
+<person person_id="2918" name="D. Jones" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="46511" name="J. McArthur" type="player" position="Midfielder" nationality_id="165"/>
+<person person_id="46512" name="J. McCarthy" type="player" position="Midfielder" nationality_id="98"/>
+<person person_id="148062" name="J. Mustoe" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="2670" name="P. Scharner" type="player" position="Midfielder" nationality_id="20"/>
+<person person_id="15796" name="B. Watson" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="59163" name="F. Di Santo" type="player" position="Attacker" nationality_id="16"/>
+<person person_id="156440" name="N. Dicko" type="player" position="Attacker" nationality_id="76"/>
+<person person_id="181106" name="Á. Henríquez" type="player" position="Attacker" nationality_id="48"/>
+<person person_id="8862" name="A. Koné" type="player" position="Attacker" nationality_id="60"/>
+<person person_id="805" name="S. Maloney" type="player" position="Attacker" nationality_id="165"/>
+<person person_id="79477" name="C. McManaman" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="102681" name="R. Miyaichi" type="player" position="Attacker" nationality_id="102"/>
+<person person_id="214653" name="F. Oršula" type="player" position="Attacker" nationality_id="171"/>
+</team>
+<team team_id="688" type="club" soccertype="default" teamtype="default" club_name="Reading">
+<person person_id="156100" name="B. McDermott" type="coach" position="" nationality_id="68"/>
+<person person_id="2566" name="A. Federici" type="player" position="Goalkeeper" nationality_id="19"/>
+<person person_id="204056" name="J. Henly" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="69110" name="A. McCarthy" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="2787" name="S. Taylor" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="259588" name="N. Arnold" type="player" position="Defender" nationality_id="68"/>
+<person person_id="51026" name="S. Cummings" type="player" position="Defender" nationality_id="68"/>
+<person person_id="15947" name="K. Gorkšs" type="player" position="Defender" nationality_id="111"/>
+<person person_id="15873" name="C. Gunter" type="player" position="Defender" nationality_id="209"/>
+<person person_id="3923" name="I. Harte" type="player" position="Defender" nationality_id="98"/>
+<person person_id="16019" name="S. Kelly" type="player" position="Defender" nationality_id="98"/>
+<person person_id="2546" name="A. Mariappa" type="player" position="Defender" nationality_id="101"/>
+<person person_id="21093" name="Daniel Carriço" type="player" position="Defender" nationality_id="156"/>
+<person person_id="51155" name="S. Morrison" type="player" position="Defender" nationality_id="68"/>
+<person person_id="21087" name="A. Pearce" type="player" position="Defender" nationality_id="98"/>
+<person person_id="2568" name="N. Shorey" type="player" position="Defender" nationality_id="68"/>
+<person person_id="110664" name="H. Akpan" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="2577" name="B. Gunnarsson" type="player" position="Midfielder" nationality_id="93"/>
+<person person_id="5231" name="D. Guthrie" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="21086" name="J. Karacan" type="player" position="Midfielder" nationality_id="196"/>
+<person person_id="23181" name="J. Kébé" type="player" position="Midfielder" nationality_id="125"/>
+<person person_id="2596" name="M. Leigertwood" type="player" position="Midfielder" nationality_id="15"/>
+<person person_id="212795" name="C. Losasso" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="15447" name="J. McAnuff" type="player" position="Midfielder" nationality_id="101"/>
+<person person_id="47501" name="G. McCleary" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="46492" name="H. Robson-Kanu" type="player" position="Midfielder" nationality_id="209"/>
+<person person_id="15832" name="J. Tabb" type="player" position="Midfielder" nationality_id="98"/>
+<person person_id="68533" name="N. Bignall" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="50642" name="N. Blackman" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="46497" name="S. Church" type="player" position="Attacker" nationality_id="209"/>
+<person person_id="1017" name="N. Hunt" type="player" position="Attacker" nationality_id="98"/>
+<person person_id="50713" name="A. Le Fondre" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="5939" name="P. Pogrebnyak" type="player" position="Attacker" nationality_id="160"/>
+<person person_id="2701" name="J. Roberts" type="player" position="Attacker" nationality_id="83"/>
+</team>
+<team team_id="690" type="club" soccertype="default" teamtype="default" club_name="Stoke City">
+<person person_id="110695" name="T. Pulis" type="coach" position="" nationality_id="209"/>
+<person person_id="30599" name="A. Begović" type="player" position="Goalkeeper" nationality_id="33"/>
+<person person_id="2788" name="T. Sørensen" type="player" position="Goalkeeper" nationality_id="61"/>
+<person person_id="16046" name="C. Nash" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="29763" name="G. Cameron" type="player" position="Defender" nationality_id="203"/>
+<person person_id="11" name="R. Huth" type="player" position="Defender" nationality_id="80"/>
+<person person_id="16535" name="R. Shawcross" type="player" position="Defender" nationality_id="68"/>
+<person person_id="35873" name="R. Shotton" type="player" position="Defender" nationality_id="68"/>
+<person person_id="15459" name="A. Wilkinson" type="player" position="Defender" nationality_id="68"/>
+<person person_id="22852" name="M. Wilson" type="player" position="Defender" nationality_id="98"/>
+<person person_id="835" name="C. Adam" type="player" position="Midfielder" nationality_id="165"/>
+<person person_id="2720" name="M. Etherington" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="15398" name="M. Kightly" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="47041" name="S. N'Zonzi" type="player" position="Midfielder" nationality_id="76"/>
+<person person_id="155329" name="J. Ness" type="player" position="Midfielder" nationality_id="165"/>
+<person person_id="10253" name="W. Palacios" type="player" position="Midfielder" nationality_id="90"/>
+<person person_id="2974" name="J. Pennant" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="15518" name="G. Whelan" type="player" position="Midfielder" nationality_id="98"/>
+<person person_id="16038" name="D. Whitehead" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="191" name="P. Crouch" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="16031" name="C. Jerome" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="647" name="K. Jones" type="player" position="Attacker" nationality_id="194"/>
+<person person_id="192" name="M. Owen" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="28096" name="B. Shea" type="player" position="Attacker" nationality_id="203"/>
+<person person_id="15748" name="J. Walters" type="player" position="Attacker" nationality_id="98"/>
+</team>
+<team team_id="702" type="club" soccertype="default" teamtype="default" club_name="Queens Park Rangers">
+<person person_id="110682" name="H. Redknapp" type="coach" position="" nationality_id="68"/>
+<person person_id="2927" name="R. Černý" type="player" position="Goalkeeper" nationality_id="59"/>
+<person person_id="2707" name="R. Green" type="player" position="Goalkeeper" nationality_id="68"/>
+<person person_id="6973" name="B. Murphy" type="player" position="Goalkeeper" nationality_id="98"/>
+<person person_id="125" name="Júlio César" type="player" position="Goalkeeper" nationality_id="35"/>
+<person person_id="2625" name="T. Ben Haim" type="player" position="Defender" nationality_id="99"/>
+<person person_id="5279" name="José Bosingwa" type="player" position="Defender" nationality_id="156"/>
+<person person_id="20800" name="C. Hill" type="player" position="Defender" nationality_id="68"/>
+<person person_id="2847" name="N. Onuoha" type="player" position="Defender" nationality_id="68"/>
+<person person_id="61064" name="Fábio" type="player" position="Defender" nationality_id="35"/>
+<person person_id="1867" name="C. Samba" type="player" position="Defender" nationality_id="52"/>
+<person person_id="5306" name="A. Traoré" type="player" position="Defender" nationality_id="166"/>
+<person person_id="78012" name="Suk-Young Yoon" type="player" position="Defender" nationality_id="107"/>
+<person person_id="2765" name="L. Young" type="player" position="Defender" nationality_id="68"/>
+<person person_id="21017" name="S. Derry" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="111766" name="Samba Diakité" type="player" position="Midfielder" nationality_id="125"/>
+<person person_id="142709" name="M. Ehmer" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="2731" name="H. Ephraim" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="18824" name="Granero" type="player" position="Midfielder" nationality_id="176"/>
+<person person_id="188" name="J. Jenas" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="1462" name="S. M'Bia" type="player" position="Midfielder" nationality_id="42"/>
+<person person_id="453" name="Ji-Sung Park" type="player" position="Midfielder" nationality_id="107"/>
+<person person_id="5885" name="A. Taarabt" type="player" position="Midfielder" nationality_id="133"/>
+<person person_id="75627" name="A. Townsend" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="2538" name="S. Wright-Phillips" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="15404" name="J. Bothroyd" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="15722" name="D. Campbell" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="33261" name="D. Hoilett" type="player" position="Attacker" nationality_id="43"/>
+<person person_id="2882" name="A. Johnson" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="23332" name="J. Mackie" type="player" position="Attacker" nationality_id="165"/>
+<person person_id="4572" name="L. Rémy" type="player" position="Attacker" nationality_id="76"/>
+<person person_id="2730" name="B. Zamora" type="player" position="Attacker" nationality_id="68"/>
+</team>
+<team team_id="738" type="club" soccertype="default" teamtype="default" club_name="Swansea City">
+<person person_id="136326" name="M. Laudrup" type="coach" position="" nationality_id="61"/>
+<person person_id="87951" name="D. Cornell" type="player" position="Goalkeeper" nationality_id="209"/>
+<person person_id="1596" name="G. Tremmel" type="player" position="Goalkeeper" nationality_id="80"/>
+<person person_id="2476" name="M. Vorm" type="player" position="Goalkeeper" nationality_id="138"/>
+<person person_id="110393" name="K. Bartley" type="player" position="Defender" nationality_id="68"/>
+<person person_id="207547" name="B. Davies" type="player" position="Defender" nationality_id="209"/>
+<person person_id="58308" name="Chico" type="player" position="Defender" nationality_id="176"/>
+<person person_id="47565" name="G. Monk" type="player" position="Defender" nationality_id="68"/>
+<person person_id="47571" name="Àngel Rangel" type="player" position="Defender" nationality_id="176"/>
+<person person_id="132628" name="D. Situ" type="player" position="Defender" nationality_id="76"/>
+<person person_id="259601" name="S. Tancock" type="player" position="Defender" nationality_id="209"/>
+<person person_id="36434" name="N. Taylor" type="player" position="Defender" nationality_id="209"/>
+<person person_id="2488" name="D. Tiendalli" type="player" position="Defender" nationality_id="138"/>
+<person person_id="47555" name="A. Williams" type="player" position="Defender" nationality_id="209"/>
+<person person_id="2440" name="K. Agustien" type="player" position="Midfielder" nationality_id="138"/>
+<person person_id="47560" name="L. Britton" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="2259" name="J. de Guzman" type="player" position="Midfielder" nationality_id="138"/>
+<person person_id="15496" name="N. Dyer" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="47563" name="M. Gower" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="58781" name="Pablo Hernández" type="player" position="Midfielder" nationality_id="176"/>
+<person person_id="259599" name="H. Jones" type="player" position="Midfielder" nationality_id="209"/>
+<person person_id="26915" name="Sung-Yong Ki" type="player" position="Midfielder" nationality_id="107"/>
+<person person_id="9906" name="R. Lamah" type="player" position="Midfielder" nationality_id="27"/>
+<person person_id="128157" name="L. Lucas" type="player" position="Midfielder" nationality_id="209"/>
+<person person_id="211036" name="K. March" type="player" position="Midfielder" nationality_id="209"/>
+<person person_id="63979" name="Michu" type="player" position="Midfielder" nationality_id="176"/>
+<person person_id="2946" name="W. Routledge" type="player" position="Midfielder" nationality_id="68"/>
+<person person_id="154597" name="R. Donnelly" type="player" position="Attacker" nationality_id="145"/>
+<person person_id="155044" name="J. Loveridge" type="player" position="Attacker" nationality_id="209"/>
+<person person_id="2811" name="L. Moore" type="player" position="Attacker" nationality_id="68"/>
+<person person_id="59540" name="E. Shechter" type="player" position="Attacker" nationality_id="99"/>
+</team>
+</gsmrs>
