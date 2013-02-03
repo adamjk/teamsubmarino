@@ -61,8 +61,10 @@ require("../inc/all.php");
 
       <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit">
-	  		  <h1>Top Injuries</h1>
-		 <p>There is a certain amount of randomness and unluckiness with all injuries, however, certain types of injury risks, such as muscular injuries, can be reduced through better training and sports science practices.</p>
+	  		  <h1>EPL: Top Injury Cost (Games)</h1>
+		 <p>There is a certain amount of randomness and unluckiness with all injuries, however, certain types of injury risks, 
+		 such as muscular injuries, can be reduced through better 
+		 training and sports science practices.</p>
 		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		    <input type="radio" name="type" value="all" checked>All</input>&nbsp;&nbsp;
 			<input type="radio" name="type" value="musc">Muscular</input>&nbsp;&nbsp;

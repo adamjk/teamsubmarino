@@ -49,6 +49,31 @@ function jsonString($results, $headers) {
     
 }
 
+function jsonStringNoHeaderArray($results) {
+    $jsonString = '[ ';
+
+    foreach ($results as $line) {
+        //print_r($line);
+        //print_r($headers);
+        $jsonString .= '[ ';
+        for ($i = 0; $i < count($line); $i++) {
+
+            $jsonString .= '"' . $line[$i] . '"';
+            if ($i != count($line) - 1) {
+                $jsonString .= ', ';
+            }
+        }
+
+        $jsonString .= '], ';
+
+    }
+    unset($line);
+    $jsonString .= ' ]';
+
+    return $jsonString;
+
+}
+
 // TODO since we only have one season and one league of data, all access
 // functions are missing id parameters for these. add later for support
 static $SEASON_START_YEAR = 2012;
@@ -177,10 +202,10 @@ class TeamDao {
     
     // could be used for maybe a chord graph?
     // per player-type return the number of occurences and # games missed
-    public function getInjuryDataByPlayerAndType($teamId, $injuryCat = null) {
+    public function getInjuryDataByPlayerAndType($teamId) {
         global $DB, $SEASON_START_YEAR, $LEAGUE_NAME;
         
-        $sql = "SELECT SP.NAME, SP.ID, PI.INJURY_TYPE_NAME, COUNT(DISTINCT PI.ID), COUNT(MS.ID) "
+        $sql = "SELECT SP.NAME, SP.ID, PI.INJURY_CATEGORY_NAME, COUNT(DISTINCT PI.ID), COUNT(MS.ID) "
             . "FROM TEAMS T, SEASON_PLAYERS SP, PLAYER_INJURIES PI, MATCH_STATS MS "
             . "WHERE T.ID = SP.TEAM_ID AND SP.SEASON_START_YEAR = ? "
             . "AND T.LEAGUE_NAME = ? AND SP.ID = PI.SEASON_PLAYER_ID "
@@ -190,25 +215,18 @@ class TeamDao {
             . "AND ((PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND PI.EXCLUSIVE_END_DATE > MS.GAME_DATE) "
             . " OR (PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND PI.EXCLUSIVE_END_DATE IS NULL)) ";
         
-        if (!empty($injuryCat)) {
-            $sql = $sql . "AND PI.INJURY_CATEGORY_NAME = ? ";
-        }
-        $sql = $sql . "GROUP BY SP.NAME, SP.ID, PI.INJURY_TYPE_NAME "
-                . "ORDER BY COUNT(DISTINCT PI.ID) DESC, COUNT(MS.ID) DESC";
+        $sql = $sql . "GROUP BY SP.NAME, SP.ID, PI.INJURY_CATEGORY_NAME "
+                . "ORDER BY SP.ID, PI.INJURY_CATEGORY_NAME";
         
         //printf($sql);
-        
-        $queryResults = array();
+        $categories = array("JOINT", "MISC", "MUSCLE", "FRACTURE", "LIGAMENT");
+        $injuryMap = array();
+        $playerInjCatResults = array();
         if ($stmt = $DB->prepare($sql)) {
             $types = "isis";
-            if (!empty($injuryCat)) {
-                $types = $types . "s";
-                $stmt->bind_param($types, $SEASON_START_YEAR, $LEAGUE_NAME, $SEASON_START_YEAR,
-                        $teamId, $injuryCat);
-            } else {
-                $stmt->bind_param($types, $SEASON_START_YEAR, $LEAGUE_NAME, $SEASON_START_YEAR,
+            $stmt->bind_param($types, $SEASON_START_YEAR, $LEAGUE_NAME, $SEASON_START_YEAR,
                         $teamId);
-            }
+           
         
             $stmt->execute();
         
@@ -216,17 +234,49 @@ class TeamDao {
             $stmt->bind_result($playerName, $playerId, $injuryType, $injuryCount, $numGames);
         
             // add header entry
-            $queryResults[] = array("PLAYER_NAME", "PLAYER_ID", "INJURY_TYPE","INJURY_COUNT","GAMES_MISSED");
+            //$queryResults[] = array("PLAYER_NAME", "PLAYER_ID", "INJURY_CAT","INJURY_COUNT","GAMES_MISSED");
+            
             /* fetch value */
+            $nextPlayerId = 0;
+            $catArray;
+            $currInjuryIndex = 0;
             while ($stmt->fetch()) {
-                $queryResults[] = array($playerName, $playerId, $injuryType, $injuryCount, $numGames);
+                if ($nextPlayerId != $playerId) {
+                    $nextPlayerId = $playerId;
+                    $catArray = array();
+                    foreach ($categories as $category) {
+                        $catArray[$category] = 0;
+                    }
+                    $injuryMap[$currInjuryIndex] = $catArray;
+                    $currInjuryIndex++;
+                    $playerInjCatResults[] = array($playerName, "#AAAAAA");
+                    unset($category);
+                }
                 
+                $injuryMap[$currInjuryIndex - 1][$injuryType] = $numGames;
+                $catArray[$injuryType] = $numGames;
             }
             $stmt->close();
         }
+        foreach ($categories as $category) {
+            $playerInjCatResults[] = array($category, "#AAAAAA");
+        }
+        unset($category);
         
-        return jsonString($queryResults, $headers);
+        $playerHeaders = array("name", "color");
+
+        $injuryArray = array();
+        foreach ($injuryMap as $injuryEntry) {
+            $injuryArrayEntry = array();
+            foreach ($categories as $category) {
+                $injuryArrayEntry[] = $injuryEntry[$category];
+            }
+            $injuryArray[] = $injuryArrayEntry;
+        }
+        
+        return array(jsonString($playerInjCatResults, $playerHeaders),  jsonStringNoHeaderArray($injuryArray)); //jsonString($queryResults, $headers);
     }
+    
 }
 
 /**
