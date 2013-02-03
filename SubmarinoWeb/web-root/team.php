@@ -48,9 +48,9 @@ require("../inc/all.php");
           <a class="brand" href="#">Project Submarino</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="index.php">Home</a></li>
+              <li><a href="index.php">Home</a></li>
               <li><a href="index.php">Leagues</a></li>
-              <li class="active"><a href="team.php">Teams</a></li>
+              <li class="active"><a href="team.php?team_name=Arsenal%20Football%20Club&team_id=660">Teams</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -61,8 +61,8 @@ require("../inc/all.php");
 
       <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit">
-	  		  <h1>Top Injuries</h1>
-		 <p>There is a certain amount of randomness and unluckiness with all injuries, however, certain types of injury risks, such as muscular injuries, can be reduced through better training and sports science practices.</p>
+	  		  <h1>Team: <?php echo($_GET["team_name"]) ?></h1>
+		 <p>How are injuries distributed across dimensions of games missed and type.</p>
 		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		    <input type="radio" name="type" value="all" checked>All</input>&nbsp;&nbsp;
 			<input type="radio" name="type" value="musc">Muscular</input>&nbsp;&nbsp;
@@ -83,10 +83,11 @@ require("../inc/all.php");
 
     // Data Used for this example…
     <?php  
+        $teamId = $_GET["team_id"];
         $teamDao = new TeamDao(); 
-        $leagueGamesMissedByPlayer = $teamDao->getGamesMissedByPlayer("660");
-        $numInjuriesByGamesMissed = $teamDao->getNumInjuriesByGamesMissed("660");
-        $injuryDataByPlayer = $teamDao->getInjuryDataByPlayerAndType("660");
+        $leagueGamesMissedByPlayer = $teamDao->getGamesMissedByPlayer($teamId);
+        $numInjuriesByGamesMissed = $teamDao->getNumInjuriesByGamesMissed($teamId);
+        $injuryDataByPlayer = $teamDao->getInjuryDataByPlayerAndType($teamId);
     ?>
     // main graph dataset
     //var dataSet1 = <?php echo($leagueGamesMissed); ?>;
@@ -418,7 +419,7 @@ require("../inc/all.php");
         </div>
         <div class="span6">
           <h2>Player Injuries Length Histogram</h2>
-          <p>This histogram details whether you have chronic minor issues or long term serious conditions.</p>
+          <p>Details chronic minor issues or long term serious conditions.</p>
           <div class="chart3"></div>
 		  <script type="text/javascript">
 		  var numInjuriesByGames = <?php echo($numInjuriesByGamesMissed); ?>;

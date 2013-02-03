@@ -50,7 +50,7 @@ require("../inc/all.php");
             <ul class="nav">
               <li><a href="index.php">Home</a></li>
               <li class="active"><a href="index.php">Leagues</a></li>
-              <li><a href="team.php">Teams</a></li>
+              <li><a href="team.php?team_name=Arsenal%20Football%20Club&team_id=660">Teams</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -174,7 +174,7 @@ require("../inc/all.php");
       canvas.selectAll("rect")
         .data(dataSet)
         .enter().append("svg:a")
-          .attr("xlink:href", function(d) { return d.Team; })
+          .attr("xlink:href", function(d) { return "team.php?team_name=" + d.Team + "&team_id=" + d.TeamId; })
           .append("svg:rect")
             // NOTE: the "15 represents an offset to allow for space to place magnitude
             // at end of bars.  May have to address this better, possibly by placing the
@@ -215,7 +215,7 @@ require("../inc/all.php");
       canvas.selectAll("a.legend_link")
         .data(dataSet) // Instruct to bind dataSet to text elements
         .enter().append("svg:a") // Append legend elements
-          .attr("xlink:href", function(d) { return d.Team; })
+          .attr("xlink:href", function(d) { return "team.php?team_name=" + d.Team + "&team_id=" + d.TeamId; })
             .append("text")
               .attr("text-anchor", "center")
               .attr("x", 0)
