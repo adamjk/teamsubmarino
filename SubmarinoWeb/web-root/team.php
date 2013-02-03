@@ -263,8 +263,8 @@ var svg = d3.select(".chart").append("svg")
 svg.append("circle")
     .attr("r", outerRadius);
 
-d3.csv("names.csv", function(cities) {
-  d3.json("data.json", function(matrix) {
+d3.csv("citiesnew.csv", function(cities) {
+  d3.json("matrixnew.json", function(matrix) {
  // [ [0,0,0,4,0,0], [0,0,0,5,2,0], [0,0,0,7,0,3], [4,5,7,0,0,0], [0,2,0,0,0,0], [0,0,3,0,0,0] ]
     // Compute the chord layout.
     layout.matrix(matrix);
