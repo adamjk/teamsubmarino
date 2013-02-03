@@ -234,8 +234,8 @@ require("../inc/all.php");
 <script src="http://d3js.org/d3.v3.js"></script>
 <script>
 
-var width = 720,
-    height = 720,
+var width = 600,
+    height = 600,
     outerRadius = Math.min(width, height) / 2 - 10,
     innerRadius = outerRadius - 24;
 
