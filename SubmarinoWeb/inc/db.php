@@ -90,6 +90,61 @@ class TeamDao {
         return csvString($queryResults);
     }
 
+    public function getNumInjuriesByGamesMissed($teamId, $injuryCat = null) {
+        global $DB, $SEASON_START_YEAR, $LEAGUE_NAME;
+        
+        $sql = "SELECT PIC.M_COUNT, COUNT(PIC.M_COUNT) "
+            . "FROM ( SELECT T.ID AS TID, SP.ID AS SPID, PI.ID AS PIID, COUNT(MS.ID) AS M_COUNT "
+            . "FROM TEAMS T, SEASON_PLAYERS SP, PLAYER_INJURIES PI, MATCH_STATS MS "
+            . "WHERE T.ID = SP.TEAM_ID AND SP.SEASON_START_YEAR = ? "
+            . "AND T.LEAGUE_NAME = ? AND SP.ID = PI.SEASON_PLAYER_ID "
+            . "AND T.ID = MS.TEAM_ID AND MS.SEASON_START_YEAR = ? "
+            . "AND T.ID = ? "
+            . "AND MS.GAME_DATE <= CURDATE() "
+            . "AND ((PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND PI.EXCLUSIVE_END_DATE > MS.GAME_DATE) "
+            . "  OR (PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND PI.EXCLUSIVE_END_DATE IS NULL)) ";
+        
+        if (!empty($injuryCat)) {
+            $sql = $sql . "AND PI.INJURY_CATEGORY_NAME = ? ";
+        }
+        $sql = $sql . "GROUP BY T.ID, SP.ID, PI.ID ) PIC "
+                . "GROUP BY PIC.M_COUNT "
+                . "ORDER BY COUNT(PIC.M_COUNT) DESC";
+               
+        //printf($sql);
+        
+        $queryResults = array();
+        if ($stmt = $DB->prepare ($sql)) {
+        
+            $types = "isis";
+            if (!empty($injuryCat)) {
+                $types = $types . "s";
+                $stmt->bind_param($types, $SEASON_START_YEAR, $LEAGUE_NAME, $SEASON_START_YEAR,
+                        $teamId, $injuryCat);
+            } else {
+                $stmt->bind_param($types, $SEASON_START_YEAR, $LEAGUE_NAME, $SEASON_START_YEAR,
+                        $teamId);
+            }
+        
+            $stmt->execute();
+        
+            /* bind result variables */
+            $stmt->bind_result($numGamesMissed, $injuryCount);
+        
+            // add header entry
+            $queryResults[] = array("GAMES_MISSED", "NUM_INJURIES");
+            /* fetch value */
+            $total_count = 0;
+            while ($stmt->fetch()) {
+                $queryResults[] = array($numGamesMissed, $injuryCount);
+                $total_count += $injuryCount;
+            }
+            //printf("total count: " + $total_count);
+            $stmt->close();
+        }
+        
+        return csvString($queryResults);
+    }
 }
 
 /**
