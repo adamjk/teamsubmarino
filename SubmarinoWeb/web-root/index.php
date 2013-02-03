@@ -21,7 +21,7 @@ require("../inc/all.php");
         padding-bottom: 40px;
       }
     </style>
-    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="asset/css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -425,7 +425,7 @@ require("../inc/all.php");
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="asset/js/jquery01.9.0.js"></script>
+    <script src="asset/js/jquery-1.9.0.js"></script>
     <script src="asset/js/bootstrap-transition.js"></script>
     <script src="asset/js/bootstrap-alert.js"></script>
     <script src="asset/js/bootstrap-modal.js"></script>
