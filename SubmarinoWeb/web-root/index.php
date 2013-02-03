@@ -66,10 +66,33 @@ require("../inc/all.php");
 		 such as muscular injuries, can be reduced through better 
 		 training and sports science practices.</p>
 		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		    <input type="radio" name="type" value="all" checked>All</input>&nbsp;&nbsp;
-			<input type="radio" name="type" value="musc">Muscular</input>&nbsp;&nbsp;
-			<input type="radio" name="type" value="joint">Joint</input>&nbsp;&nbsp;
-			<input type="radio" name="type" value="misc">Misc</input>&nbsp;&nbsp;
+		    <input type="radio" name="type" value="all" onClick="button_click_all();" >All</input>&nbsp;&nbsp;
+			<input type="radio" name="type" value="musc" onClick="button_click_musc();">Muscular</input>&nbsp;&nbsp;
+			<input type="radio" name="type" value="joint" onClick="button_click_joint()">Joint</input>&nbsp;&nbsp;
+			<input type="radio" name="type" value="misc" onClick="button_click_misc();">Misc</input>
+			<input type="radio" name="type" value="misc" onClick="button_click_fracture()">Fracture</input>
+			<input type="radio" name="type" value="misc" onClick="button_click_ligament()">Ligament</input>&nbsp;&nbsp;
+			
+<script>
+function button_click_all() {
+	window.location=('index.php');
+}
+function button_click_musc() {
+	window.location=('index.php?injury_cat=MUSCLE');
+}
+function button_click_joint() {
+	window.location=('index.php?injury_cat=JOINT');
+}
+function button_click_misc() {
+	window.location=('index.php?injury_cat=MISC');
+}
+function button_click_fracture() {
+	window.location=('index.php?injury_cat=FRACTURE');
+}
+function button_click_ligament() {
+	window.location=('index.php?injury_cat=LIGAMENT');
+}
+</script>
 	  <div class="row-fluid">
         <div class="columnA pull-left">
 
@@ -85,8 +108,15 @@ require("../inc/all.php");
 
     // Data Used for this example…
     <?php  
+    
+    	if (isset($_GET['injury_cat'])) {
+    		$injury_cat = $_GET['injury_cat'];
+    	}else{
+    		$injury_cat = null;
+    	}
+    
         $leagueDao = new LeagueDao(); 
-        $leagueGamesMissed = $leagueDao->getGamesMissedByTeam();
+        $leagueGamesMissed = $leagueDao->getGamesMissedByTeam( $injury_cat );
         $avgLengthInjury = $leagueDao->getAvgLengthOfInjuryByTeam();
         $reocccurenceData = $leagueDao->getInjuryReoccurencesByTeam();
     ?>
@@ -176,7 +206,7 @@ require("../inc/all.php");
       canvas.selectAll("rect")
         .data(dataSet)
         .enter().append("svg:a")
-          .attr("xlink:href", function(d) { return "team.php?team_name=" + d.Team + "&team_id=" + d.TeamId; })
+          .attr("xlink:href", function(d) { return "team.php?team_id="+d.TeamId+"&team_name="+d.Team; })
           .append("svg:rect")
             // NOTE: the "15 represents an offset to allow for space to place magnitude
             // at end of bars.  May have to address this better, possibly by placing the
@@ -217,7 +247,7 @@ require("../inc/all.php");
       canvas.selectAll("a.legend_link")
         .data(dataSet) // Instruct to bind dataSet to text elements
         .enter().append("svg:a") // Append legend elements
-          .attr("xlink:href", function(d) { return "team.php?team_name=" + d.Team + "&team_id=" + d.TeamId; })
+        	.attr("xlink:href", function(d) { return "team.php?team_name=" + d.Team + "&team_id=" + d.TeamId; })
             .append("text")
               .attr("text-anchor", "center")
               .attr("x", 0)
