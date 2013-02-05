@@ -52,6 +52,8 @@ function jsonString($results, $headers) {
 function jsonStringNoHeaderArray($results) {
     $jsonString = '[ ';
 
+    $curr = 0;
+    $len = count($results);
     foreach ($results as $line) {
         //print_r($line);
         //print_r($headers);
@@ -64,8 +66,13 @@ function jsonStringNoHeaderArray($results) {
             }
         }
 
-        $jsonString .= '], ';
-
+        if ($curr == $len - 1) {
+            $jsonString .= '] ';
+        } else {
+            $jsonString .= '], ';
+        }
+        
+        $curr++;
     }
     unset($line);
     $jsonString .= ' ]';
@@ -97,8 +104,9 @@ class TeamDao {
             . "AND T.ID = ? "
             . "AND MS.GAME_DATE <= CURDATE() "
             . "AND ((PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND PI.EXCLUSIVE_END_DATE > MS.GAME_DATE) "
-            . " OR (PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND PI.EXCLUSIVE_END_DATE IS NULL)) ";
-
+            . " OR (PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND (PI.EXCLUSIVE_END_DATE IS NULL OR PI.EXCLUSIVE_END_DATE = 0) " 
+                    . "AND (PI.expected_excl_end_date IS NULL OR PI.expected_excl_end_date = 0 OR PI.expected_excl_end_date > MS.GAME_DATE) )) ";
+            
         if (!empty($injuryCat)) {
             $sql = $sql . "AND PI.INJURY_CATEGORY_NAME = ? ";
         }
@@ -154,8 +162,9 @@ class TeamDao {
             . "AND T.ID = ? "
             . "AND MS.GAME_DATE <= CURDATE() "
             . "AND ((PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND PI.EXCLUSIVE_END_DATE > MS.GAME_DATE) "
-            . "  OR (PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND PI.EXCLUSIVE_END_DATE IS NULL)) ";
-        
+            . " OR (PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND (PI.EXCLUSIVE_END_DATE IS NULL OR PI.EXCLUSIVE_END_DATE = 0) " 
+                    . "AND (PI.expected_excl_end_date IS NULL OR PI.expected_excl_end_date = 0 OR PI.expected_excl_end_date > MS.GAME_DATE) )) ";
+                    
         if (!empty($injuryCat)) {
             $sql = $sql . "AND PI.INJURY_CATEGORY_NAME = ? ";
         }
@@ -213,8 +222,9 @@ class TeamDao {
             . "AND T.ID = ? "
             . "AND MS.GAME_DATE <= CURDATE() "
             . "AND ((PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND PI.EXCLUSIVE_END_DATE > MS.GAME_DATE) "
-            . " OR (PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND PI.EXCLUSIVE_END_DATE IS NULL)) ";
-        
+            . " OR (PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND (PI.EXCLUSIVE_END_DATE IS NULL OR PI.EXCLUSIVE_END_DATE = 0) " 
+                . "AND (PI.expected_excl_end_date IS NULL OR PI.expected_excl_end_date = 0 OR PI.expected_excl_end_date > MS.GAME_DATE) )) ";
+                    
         $sql = $sql . "GROUP BY SP.NAME, SP.ID, PI.INJURY_CATEGORY_NAME "
                 . "ORDER BY SP.ID, PI.INJURY_CATEGORY_NAME";
         
@@ -222,6 +232,12 @@ class TeamDao {
         $categories = array("JOINT", "MISC", "MUSCLE", "FRACTURE", "LIGAMENT");
         $injuryMap = array();
         $playerInjCatResults = array();
+        $playerInjCatResults[] = array("name", "color");
+        $colors = array("#FFFF33","#984EA3","#FF7F00","#F781BF",
+                "#377EB8","#A65628","#F781BF","#A65628","#FFFF33",
+                "#984EA3","#F781BF","#F781BF", "#377EB8",
+                "#A65628","#377EB8");
+                                        
         if ($stmt = $DB->prepare($sql)) {
             $types = "isis";
             $stmt->bind_param($types, $SEASON_START_YEAR, $LEAGUE_NAME, $SEASON_START_YEAR,
@@ -233,13 +249,11 @@ class TeamDao {
             /* bind result variables */
             $stmt->bind_result($playerName, $playerId, $injuryType, $injuryCount, $numGames);
         
-            // add header entry
-            //$queryResults[] = array("PLAYER_NAME", "PLAYER_ID", "INJURY_CAT","INJURY_COUNT","GAMES_MISSED");
-            
             /* fetch value */
             $nextPlayerId = 0;
             $catArray;
             $currInjuryIndex = 0;
+            $numPlayers = 0;
             while ($stmt->fetch()) {
                 if ($nextPlayerId != $playerId) {
                     $nextPlayerId = $playerId;
@@ -247,34 +261,61 @@ class TeamDao {
                     foreach ($categories as $category) {
                         $catArray[$category] = 0;
                     }
-                    $injuryMap[$currInjuryIndex] = $catArray;
-                    $currInjuryIndex++;
-                    $playerInjCatResults[] = array($playerName, "#AAAAAA");
                     unset($category);
+                    
+                    $injuryMap[] = $catArray;
+                    $playerInjCatResults[] = array($playerName, $colors[ $currInjuryIndex % count($colors)]);
+                    
+                    $currInjuryIndex++;
+                    $numPlayers++;
                 }
                 
                 $injuryMap[$currInjuryIndex - 1][$injuryType] = $numGames;
-                $catArray[$injuryType] = $numGames;
+                //$catArray[$injuryType] = $numGames;
             }
             $stmt->close();
         }
+        
+        // add injuries to end
         foreach ($categories as $category) {
-            $playerInjCatResults[] = array($category, "#AAAAAA");
+            $playerInjCatResults[] = array($category, "#CDCDCD");
         }
         unset($category);
         
-        $playerHeaders = array("name", "color");
-
         $injuryArray = array();
         foreach ($injuryMap as $injuryEntry) {
             $injuryArrayEntry = array();
+            
+            // add blank players 
+            for ($i = 0; $i < $numPlayers; $i++) {
+                $injuryArrayEntry[] = 0;
+            }
             foreach ($categories as $category) {
                 $injuryArrayEntry[] = $injuryEntry[$category];
             }
+            unset($category);
             $injuryArray[] = $injuryArrayEntry;
         }
+        // initialize category row arrays
+        foreach ($categories as $category) {
+            $injuryArray[] = array();
+        }
         
-        return array(jsonString($playerInjCatResults, $playerHeaders),  jsonStringNoHeaderArray($injuryArray)); //jsonString($queryResults, $headers);
+        // transpose
+        for ($i = 0; $i < $numPlayers; $i++) {
+            for ($j = $numPlayers; $j < ($numPlayers + count($categories)); $j++) {
+                $injuryArray[$j][$i] = $injuryArray[$i][$j];
+            }
+        }
+        
+        // pad new rows with category zeros
+        for ($i = $numPlayers; $i < ($numPlayers + count($categories)); $i++) {
+            for ($j = $numPlayers; $j < ($numPlayers + count($categories)); $j++) {
+                $injuryArray[$i][$j] = 0;
+            }
+        }
+
+        return array(csvString($playerInjCatResults),  jsonStringNoHeaderArray($injuryArray)); //jsonString($queryResults, $headers);
     }
     
 }
@@ -302,8 +343,9 @@ class LeagueDao {
                 . "AND T.ID = MS.TEAM_ID AND MS.SEASON_START_YEAR = ? "
                 . "AND MS.GAME_DATE <= CURDATE() "
                 . "AND ((PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND PI.EXCLUSIVE_END_DATE > MS.GAME_DATE) "
-                . "  OR (PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND PI.EXCLUSIVE_END_DATE IS NULL)) ";
-        
+                . " OR (PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND (PI.EXCLUSIVE_END_DATE IS NULL OR PI.EXCLUSIVE_END_DATE = 0) " 
+                    . "AND (PI.expected_excl_end_date IS NULL OR PI.expected_excl_end_date = 0 OR PI.expected_excl_end_date > MS.GAME_DATE) )) ";
+                        
         //for ($i = 0; $i < count($injuryCats); $i++) {
         //    if ($i == 0) { $sql = $sql . "AND (";};
         //    if ($i == count($injuryCats) - 1) {
@@ -378,8 +420,9 @@ class LeagueDao {
             . "AND T.ID = MS.TEAM_ID AND MS.SEASON_START_YEAR = ? "
             . "AND MS.GAME_DATE <= CURDATE() "
             . "AND ((PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND PI.EXCLUSIVE_END_DATE > MS.GAME_DATE) "
-            . "  OR (PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND PI.EXCLUSIVE_END_DATE IS NULL)) ";
-
+            . " OR (PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND (PI.EXCLUSIVE_END_DATE IS NULL OR PI.EXCLUSIVE_END_DATE = 0) " 
+                    . "AND (PI.expected_excl_end_date IS NULL OR PI.expected_excl_end_date = 0 OR PI.expected_excl_end_date > MS.GAME_DATE) )) ";
+            
         if (!empty($injuryCat)) {
             $sql = $sql . "AND PI.INJURY_CATEGORY_NAME = ? ";
         }
@@ -429,7 +472,9 @@ class LeagueDao {
             . "AND T.ID = MS.TEAM_ID AND MS.SEASON_START_YEAR = ? "
             . "AND MS.GAME_DATE <= CURDATE() "
             . "AND ((PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND PI.EXCLUSIVE_END_DATE > MS.GAME_DATE) "
-            . "  OR (PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND PI.EXCLUSIVE_END_DATE IS NULL)) ";
+            . " OR (PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND (PI.EXCLUSIVE_END_DATE IS NULL OR PI.EXCLUSIVE_END_DATE = 0) " 
+                    . "AND (PI.expected_excl_end_date IS NULL OR PI.expected_excl_end_date = 0 OR PI.expected_excl_end_date > MS.GAME_DATE) )) ";
+       
         if (!empty($injuryCat)) {
             $sql = $sql . "AND PI.INJURY_CATEGORY_NAME = ? ";
         }
