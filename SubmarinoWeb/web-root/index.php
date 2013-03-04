@@ -20,6 +20,9 @@ require("../inc/all.php");
         padding-top: 60px;
         padding-bottom: 40px;
       }
+      .hero-unit {
+          padding: 37px;
+      }
     </style>
     <link href="asset/css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -56,7 +59,14 @@ require("../inc/all.php");
         </div>
       </div>
     </div>
-
+<?php  
+    
+    	if (isset($_GET['injury_cat'])) {
+    		$injury_cat = $_GET['injury_cat'];
+    	}else{
+    		$injury_cat = null;
+    	}
+?>
     <div class="container">
 
       <!-- Main hero unit for a primary marketing message or call to action -->
@@ -66,14 +76,17 @@ require("../inc/all.php");
 		 such as muscular injuries, can be reduced through better 
 		 training and sports science practices.</p>
 		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		    <input type="radio" name="type" value="all" onClick="button_click_all();" >All</input>&nbsp;&nbsp;
-			<input type="radio" name="type" value="musc" onClick="button_click_musc();">Muscular</input>&nbsp;&nbsp;
-			<input type="radio" name="type" value="joint" onClick="button_click_joint()">Joint</input>&nbsp;&nbsp;
-			<input type="radio" name="type" value="misc" onClick="button_click_misc();">Misc</input>
-			<input type="radio" name="type" value="misc" onClick="button_click_fracture()">Fracture</input>
-			<input type="radio" name="type" value="misc" onClick="button_click_ligament()">Ligament</input>&nbsp;&nbsp;
+		    <input type="radio" name="type" id="ALL" style="margin-bottom: 5px;" value="all" onClick="button_click_all();" /> All&nbsp;&nbsp;
+			<input type="radio" name="type" id="MUSCLE" style="margin-bottom: 5px;" value="musc" onClick="button_click_musc();" /> Muscular&nbsp;&nbsp;
+			<input type="radio" name="type" id="JOINT" style="margin-bottom: 5px;" value="joint" onClick="button_click_joint()" /> Joint&nbsp;&nbsp;
+			<input type="radio" name="type" id="MISC" style="margin-bottom: 5px;" value="misc" onClick="button_click_misc();" /> Misc&nbsp;&nbsp;
+			<input type="radio" name="type" id="FRACTURE" style="margin-bottom: 5px;" value="fracture" onClick="button_click_fracture()" /> Fracture&nbsp;&nbsp;
+			<input type="radio" name="type" id="LIGAMENT" style="margin-bottom: 5px;" value="ligament" onClick="button_click_ligament()" /> Ligament&nbsp;&nbsp;
 			
 <script>
+var selectedId = "<?php echo(($injury_cat == null || $injury_cat == '')  ? 'ALL' : $injury_cat) ?>";
+document.getElementById(selectedId).checked = true;
+
 function button_click_all() {
 	window.location=('index.php');
 }
@@ -103,17 +116,11 @@ function button_click_ligament() {
 		
 	<script type="text/javascript">
 
-      // This example draws horizontal bar charts…
+      // This example draws horizontal bar charts
       // Created by Frank Guerino : "http://www.guerino.net"
 
-    // Data Used for this example…
-    <?php  
-    
-    	if (isset($_GET['injury_cat'])) {
-    		$injury_cat = $_GET['injury_cat'];
-    	}else{
-    		$injury_cat = null;
-    	}
+    // Data Used for this example
+    <?php 
     
         $leagueDao = new LeagueDao(); 
         $leagueGamesMissed = $leagueDao->getGamesMissedByTeam( $injury_cat );
@@ -164,7 +171,7 @@ function button_click_ligament() {
         var legendBulletOffset = 30;
         var legendTextOffset = 20;
 
-        var x = d3.scale.linear().domain([0, d3.max(dataSet, function(d) { return d.GamesLost; })]).rangeRound([0, barsWidthTotal]);
+        var x = d3.scale.linear().domain([0, d3.max(dataSet, function(d) { return parseInt(d.GamesLost); })]).rangeRound([0, barsWidthTotal]);
         var y = d3.scale.linear().domain([0, dataSet.length]).range([0, barsHeightTotal]);
 
 
@@ -427,7 +434,7 @@ function button_click_ligament() {
 		
     <script src="http://d3js.org/d3.v2.min.js"></script>
 	      <script type="text/javascript">
-        drawHorizontalBarChart("Bars1", dataSet1, ".chart", 600, 1400);
+        drawHorizontalBarChart("Bars1", dataSet1, ".chart", 800, 1400);
       </script>
 	  </div>
 	  <div class="columnB pull-right">
@@ -444,7 +451,7 @@ function button_click_ligament() {
 		  <script type="text/javascript">
 		  var recoveryTimeSet = <?php echo($avgLengthInjury); ?>;
 		   
-          drawHorizontalBarChart("Bars2", recoveryTimeSet, ".chart2", 200, 600);
+          drawHorizontalBarChart("Bars2", recoveryTimeSet, ".chart2", 330, 575);
       </script>
         </div>
         <div class="span6">
@@ -453,7 +460,7 @@ function button_click_ligament() {
           <div class="chart3"></div>
 		  <script type="text/javascript">
 		  var reoccurenceSet = <?php echo($reocccurenceData); ?>;
-        drawHorizontalBarChart("Bars3", reoccurenceSet, ".chart3", 200, 600);
+        drawHorizontalBarChart("Bars3", reoccurenceSet, ".chart3", 360, 575);
       </script>
        </div>
       </div>

@@ -20,6 +20,9 @@ require("../inc/all.php");
         padding-top: 60px;
         padding-bottom: 40px;
       }
+      .hero-unit {
+          padding: 25px;
+      }
     </style>
     <link href="asset/css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -69,15 +72,12 @@ require("../inc/all.php");
 
 			<div class="chart"></div>
 		
-		
-		
-		
-	<script type="text/javascript">
+	  <script type="text/javascript">
 
       // This example draws horizontal bar charts…
       // Created by Frank Guerino : "http://www.guerino.net"
 
-    // Data Used for this example…
+    // Data Used for this example�
     <?php  
         $teamId = $_GET["team_id"];
         $teamDao = new TeamDao(); 
@@ -128,8 +128,12 @@ require("../inc/all.php");
         var legendOffset = barHeight/2;
         var legendBulletOffset = 30;
         var legendTextOffset = 20;
-
-        var x = d3.scale.linear().domain([0, d3.max(dataSet, function(d) { return d.GamesLost; })]).rangeRound([0, barsWidthTotal]);
+        var maxX = 0;
+        for (i in dataSet) {
+          maxX = dataSet[i].GamesLost > maxX ? parseInt(dataSet[i].GamesLost) : maxX;
+        }
+        
+        var x = d3.scale.linear().domain([0, maxX]).rangeRound([0, barsWidthTotal]);
         var y = d3.scale.linear().domain([0, dataSet.length]).range([0, barsHeightTotal]);
 
 
@@ -192,9 +196,9 @@ require("../inc/all.php");
             .attr("index_value", function(d, i) { return "index-" + i; })
             .attr("class", function(d, i) { return "bars-" + chartID + "-bar-index-" + i; })
             .attr("color_value", "steelblue") // Bar fill color…
-            .style("stroke", "white"); // Bar border color…
+            .style("stroke", "white"); // Bar border color
 
-
+      
       // Create text values that go at end of each bar…
       canvas.selectAll("text")
         .data(dataSet) // Bind dataSet to text elements
@@ -262,9 +266,10 @@ var svg = d3.select(".chart").append("svg")
 
 svg.append("circle")
     .attr("r", outerRadius);
-
-d3.csv("names.csv", function(cities) {
-  d3.json("data.json", function(matrix) {
+//"names.csv"
+//"data.json"
+d3.csv("chord-diag-data.php?team_id=<?php echo($teamId) ?>&file_type=csv", function(cities) {
+  d3.json("chord-diag-data.php?team_id=<?php echo($teamId) ?>&file_type=json", function(matrix) {
  // [ [0,0,0,4,0,0], [0,0,0,5,2,0], [0,0,0,7,0,3], [4,5,7,0,0,0], [0,2,0,0,0,0], [0,0,3,0,0,0] ]
     // Compute the chord layout.
     layout.matrix(matrix);
@@ -291,7 +296,9 @@ d3.csv("names.csv", function(cities) {
     // Add a text label.
     var groupText = group.append("text")
         .attr("x", 6)
-        .attr("dy", 15);
+        .attr("dy", 15)
+        .attr("font-size", 13)
+        .attr("color", "#555555");
 
     groupText.append("textPath")
         .attr("xlink:href", function(d, i) { return "#group" + i; })
@@ -493,12 +500,6 @@ d3.csv("names.csv", function(cities) {
 	text-align:left;
       }
     </STYLE>
-
-		
-   
-		
-		
-   
     
 	      <script type="text/javascript">
 	      //var dataSet1 = ;
@@ -520,7 +521,7 @@ d3.csv("names.csv", function(cities) {
 		 
 		  var leagueGamesMissed = <?php echo($leagueGamesMissedByPlayer); ?>;
 		   
-          drawHorizontalBarChart("Bars2", leagueGamesMissed, ".chart2", 150, 600);
+          drawHorizontalBarChart("Bars2", leagueGamesMissed, ".chart2", 370, 575);
       </script>
         </div>
         <div class="span6">
@@ -529,7 +530,7 @@ d3.csv("names.csv", function(cities) {
           <div class="chart3"></div>
 		  <script type="text/javascript">
 		  var numInjuriesByGames = <?php echo($numInjuriesByGamesMissed); ?>;
-        drawHorizontalBarChart("Bars3", numInjuriesByGames, ".chart3", 125, 600);
+        drawHorizontalBarChart("Bars3", numInjuriesByGames, ".chart3", 370, 575);
       </script>
        </div>
       </div>

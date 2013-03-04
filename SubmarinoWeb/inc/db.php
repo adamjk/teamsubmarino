@@ -13,8 +13,11 @@ if ($DB->connect_errno) {
 function csvString($results) {
     $csvString = '';
     foreach ($results as $line) {
-        foreach($line as $entry) {
-            $csvString .= '"' . $entry . '",';
+        for ($k = 0; $k < count($line); $k++) {
+            $csvString .= $line[$k];
+            if ($k != count($line) - 1) {
+                $csvString .=  ',';
+            }
         }
         unset($entry);
         $csvString .= "\n";
@@ -27,7 +30,8 @@ function csvString($results) {
 function jsonString($results, $headers) {
     $jsonString = '[ ';
     
-    foreach ($results as $line) {
+    for ($j = 0; $j < count($results); $j++) {
+	$line = $results[$j];
         //print_r($line);
         //print_r($headers);
         $jsonString .= '{ ';
@@ -39,14 +43,15 @@ function jsonString($results, $headers) {
             }
         }
         
-        $jsonString .= '}, ';
-        
+        $jsonString .= '} ';
+        if ($j != count($results) - 1) {
+            $jsonString .= ', ';
+        }
     }
     unset($line);
     $jsonString .= ' ]';
     
     return $jsonString;
-    
 }
 
 function jsonStringNoHeaderArray($results) {
@@ -59,8 +64,12 @@ function jsonStringNoHeaderArray($results) {
         //print_r($headers);
         $jsonString .= '[ ';
         for ($i = 0; $i < count($line); $i++) {
-
-            $jsonString .= '"' . $line[$i] . '"';
+            if (is_numeric($line[$i])) {
+                $jsonString .= $line[$i];
+            } else {
+                $jsonString .= '"' . $line[$i] . '"';
+            }
+            
             if ($i != count($line) - 1) {
                 $jsonString .= ', ';
             }
@@ -233,11 +242,18 @@ class TeamDao {
         $injuryMap = array();
         $playerInjCatResults = array();
         $playerInjCatResults[] = array("name", "color");
-        $colors = array("#FFFF33","#984EA3","#FF7F00","#F781BF",
-                "#377EB8","#A65628","#F781BF","#A65628","#FFFF33",
-                "#984EA3","#F781BF","#F781BF", "#377EB8",
-                "#A65628","#377EB8");
-                                        
+
+        $colors = array(
+            "#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF", "#AEC397",
+            "#800000", "#008000", "#000080", "#808000", "#800080", "#008080", "#80F080",
+            "#C00000", "#4FC300", "#005FC0", "#C0C000", "#C000C0", "#00C0C0", "#8880C0",
+            "#400000", "#004000", "#000040", "#404000", "#400040", "#004040", "#404040",
+            "#200000", "#002000", "#000020", "#202000", "#200020", "#002020", "#202020",
+            "#600000", "#006000", "#000060", "#606000", "#600060", "#006060", "#606060",
+            "#A00000", "#00A000", "#0000A0", "#A0A000", "#A000A0", "#00A0A0", "#A0A0A0",
+            "#E00000", "#00E000", "#0000E0", "#E0E000", "#E000E0", "#00E0E0", "#E0E0E0",
+        );
+        
         if ($stmt = $DB->prepare($sql)) {
             $types = "isis";
             $stmt->bind_param($types, $SEASON_START_YEAR, $LEAGUE_NAME, $SEASON_START_YEAR,
@@ -464,24 +480,25 @@ class LeagueDao {
     
     public function getInjuryReoccurencesByTeam($injuryCat = null) {
        global $DB, $SEASON_START_YEAR, $LEAGUE_NAME;
-       $sql = "SELECT PIC.OFFICIAL_NAME, PIC.TID, COUNT(PIC.PIIT) "
-            . "FROM ( SELECT T.OFFICIAL_NAME, T.ID AS TID, SP.ID AS SPID, PI.INJURY_TYPE_NAME AS PIIT, COUNT(PI.INJURY_TYPE_NAME) AS TYPE_COUNT "
-            . "FROM TEAMS T, SEASON_PLAYERS SP, PLAYER_INJURIES PI, MATCH_STATS MS "
-            . "WHERE T.ID = SP.TEAM_ID AND SP.SEASON_START_YEAR = ? "
-            . "AND T.LEAGUE_NAME = ? AND SP.ID = PI.SEASON_PLAYER_ID "
-            . "AND T.ID = MS.TEAM_ID AND MS.SEASON_START_YEAR = ? "
-            . "AND MS.GAME_DATE <= CURDATE() "
-            . "AND ((PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND PI.EXCLUSIVE_END_DATE > MS.GAME_DATE) "
-            . " OR (PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND (PI.EXCLUSIVE_END_DATE IS NULL OR PI.EXCLUSIVE_END_DATE = 0) " 
-                    . "AND (PI.expected_excl_end_date IS NULL OR PI.expected_excl_end_date = 0 OR PI.expected_excl_end_date > MS.GAME_DATE) )) ";
        
-        if (!empty($injuryCat)) {
-            $sql = $sql . "AND PI.INJURY_CATEGORY_NAME = ? ";
-        }
-        $sql = $sql . "GROUP BY T.OFFICIAL_NAME, T.ID, PI.INJURY_TYPE_NAME, SP.ID, PI.INJURY_TYPE_NAME) PIC "
-            . "WHERE PIC.TYPE_COUNT > 1 "
-            . "GROUP BY PIC.OFFICIAL_NAME, PIC.TID  " 
-            . "ORDER BY COUNT(PIC.PIIT) DESC";
+       $sql = "SELECT DUDE.OFFICIAL_NAME, DUDE.TID, COUNT(DUDE.TID) FROM ( "
+               . "SELECT PIC.OFFICIAL_NAME, PIC.TID, PIC.SPID, PIC.PIIT, COUNT(PIC.PIIT) "
+               . "FROM ( SELECT DISTINCT T.OFFICIAL_NAME, T.ID AS TID, SP.ID AS SPID, PI.ID AS PIID, "
+               . "PI.INJURY_TYPE_NAME AS PIIT FROM TEAMS T, SEASON_PLAYERS SP, PLAYER_INJURIES PI, "
+               . "MATCH_STATS MS WHERE T.ID = SP.TEAM_ID AND SP.SEASON_START_YEAR = ? "
+               . "AND T.LEAGUE_NAME = ? AND SP.ID = PI.SEASON_PLAYER_ID AND T.ID = MS.TEAM_ID "
+               . "AND MS.SEASON_START_YEAR = ? AND MS.GAME_DATE <= CURDATE() AND "
+               . "((PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND PI.EXCLUSIVE_END_DATE > MS.GAME_DATE) "
+               . "OR (PI.INCLUSIVE_BEGIN_DATE <= MS.GAME_DATE AND (PI.EXCLUSIVE_END_DATE IS NULL "
+               . "OR PI.EXCLUSIVE_END_DATE = 0) AND (PI.expected_excl_end_date IS NULL OR PI.expected_excl_end_date = 0 OR PI.expected_excl_end_date > MS.GAME_DATE) ))";
+
+       if (!empty($injuryCat)) {
+           $sql = $sql . "AND PI.INJURY_CATEGORY_NAME = ? ";
+       }                
+                       
+       $sql = $sql . ") PIC GROUP BY PIC.OFFICIAL_NAME, PIC.TID, PIC.SPID, PIC.PIIT "
+               . "HAVING COUNT(PIC.PIIT) > 1 ) DUDE GROUP BY DUDE.OFFICIAL_NAME, DUDE.TID "
+               . "ORDER BY COUNT(DUDE.TID) DESC";
 
         //printf($sql);
         
